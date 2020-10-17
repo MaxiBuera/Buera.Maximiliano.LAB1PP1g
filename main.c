@@ -53,53 +53,6 @@ int main()
                     if(flagAlta == 0)
                         flag = 1;
                 }
-                else{
-
-                    printf("\nDebe ingresar un empleado\n");
-                }
-                break;
-
-            case 2:
-
-                if(flag!=0){
-                    employee_showEmployeeUpdated(arrayEmployees,EMPLOYEES);
-                    getValidInt("\tID a modificar: ","\nID No valido\n",&auxiliarId,0,EMPLOYEES,2);
-                    employee_updateEmployee(arrayEmployees,EMPLOYEES,auxiliarId-1);
-               }
-                else{
-
-                    printf("\nDebe ingresar un empleado\n");
-                }
-                break;
-
-            case 3:
-
-                if(flag!=0){
-                    employee_orderByLastName(arrayEmployees,EMPLOYEES,0);
-                    employee_orderBySector(arrayEmployees,EMPLOYEES,0);
-                    employee_showEmployeeUpdated(arrayEmployees,EMPLOYEES);
-                    getValidInt("\nID a eliminar: ","\nID No valido\n",&auxiliarId,0,EMPLOYEES,2);
-                    employee_removeEmployee(arrayEmployees,EMPLOYEES,auxiliarId-1);
-                }
-                else{
-
-                    printf("\nDebe ingresar un empleado\n");
-                }
-                break;
-
-            case 4:
-
-                if(flag!=0){
-                    employee_orderByLastName(arrayEmployees,EMPLOYEES,0);
-                    employee_orderBySector(arrayEmployees,EMPLOYEES,0);
-                    employee_printEmployees(arrayEmployees,EMPLOYEES);
-                    averageSalary = employee_averageSalary(arrayEmployees,EMPLOYEES);
-                    employee_aboveAverage(arrayEmployees,EMPLOYEES,averageSalary);
-                }
-                    else{
-
-                        printf("\nDebe ingresar un empleado\n");
-                }
                 break;
         }*/
     }while(menu != 12);

@@ -228,7 +228,7 @@ void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayT
 
 }
 
-int mascota_modificarMascota(eMascota* arrayMascotas, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores){
+int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores){
 
     int i;
     int returnValue = -1;
