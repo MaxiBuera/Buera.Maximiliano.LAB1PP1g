@@ -55,3 +55,49 @@
 
 1601648894 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\utn.h
 
+1602969539 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1602963652 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\tipo.h
+
+1602963652 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\color.h
+
+1602969539 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.h
+
+1602968361 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1602968409 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\color.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1602968327 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+

@@ -12,3 +12,5 @@ typedef struct{
 int color_inicializarColor(eColor* arrayColor, int limite);
 
 int color_altaForzada(eColor* arrayColor,int limite,char* nombreColor);
+
+int color_imprimirColores(eColor* arrayColor,int limite);

@@ -3,9 +3,9 @@
 #include <string.h>
 #include <ctype.h>
 #include "utn.h"
-#include "mascota.h"
 #include "tipo.h"
 #include "color.h"
+#include "mascota.h"
 #define TIPO_ID_MIN 1000
 #define TIPO_ID_MAX 2000
 #define COLOR_ID_MIN 5000
@@ -73,9 +73,30 @@ int tipo_altaForzada(eTipo* arrayTipos,int limite,char* descripcion)
     return returnValue;
 }
 
+int tipo_imprimirTipos(eTipo* arrayTipos,int limite){
+
+    int returnValue = -1;
+    int i;
+    if(limite > 0 && arrayTipos != NULL)
+    {
+        returnValue = 0;
+        printf("\n\tID\t\tTipo");
+        printf("\n\t--------------------------------");
+        for(i=0;i<limite;i++)
+        {
+        	if(!arrayTipos[i].isEmpty)
+            {
+
+           		printf("\n%10d %17s",arrayTipos[i].id,arrayTipos[i].descripcion);
+           	}
+        }
+    }
+    return returnValue;
+}
+
 static int nextId()
 {
-    static int lastId = -1;
+    static int lastId = TIPO_ID_MIN-1;
     lastId++;
     return lastId;
 }

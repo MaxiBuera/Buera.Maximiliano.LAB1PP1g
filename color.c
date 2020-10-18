@@ -3,9 +3,9 @@
 #include <string.h>
 #include <ctype.h>
 #include "utn.h"
-#include "mascota.h"
 #include "tipo.h"
 #include "color.h"
+#include "mascota.h"
 #define TIPO_ID_MIN 1000
 #define TIPO_ID_MAX 2000
 #define COLOR_ID_MIN 5000
@@ -73,9 +73,30 @@ int color_altaForzada(eColor* arrayColor,int limite,char* nombreColor)
     return returnValue;
 }
 
+int color_imprimirColores(eColor* arrayColor,int limite){
+
+    int returnValue = -1;
+    int i;
+    if(limite > 0 && arrayColor != NULL)
+    {
+        returnValue = 0;
+        printf("\n\tID Color\t\tColor");
+        printf("\n\t--------------------------------");
+        for(i=0;i<limite;i++)
+        {
+        	if(!arrayColor[i].isEmpty)
+            {
+
+           		printf("\n%12d %24s",arrayColor[i].id,arrayColor[i].nombreColor);
+           	}
+        }
+    }
+    return returnValue;
+}
+
 static int nextId()
 {
-    static int lastId = -1;
+    static int lastId = COLOR_ID_MIN-1;
     lastId++;
     return lastId;
 }

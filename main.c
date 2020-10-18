@@ -3,9 +3,9 @@
 #include <time.h>
 #include <string.h>
 #include "utn.h"
-#include "mascota.h"
 #include "tipo.h"
 #include "color.h"
+#include "mascota.h"
 #define MASCOTAS 20
 #define TIPOS 5
 #define COLORES 5
@@ -28,6 +28,7 @@ int main()
     tipo_altaForzada(arrayTipos,TIPOS,"Pez");
 
     eColor arrayColores[COLORES];
+    color_inicializarColor(arrayColores,COLORES);
     color_altaForzada(arrayColores,COLORES,"Negro");
     color_altaForzada(arrayColores,COLORES,"Blanco");
     color_altaForzada(arrayColores,COLORES,"Gris");
@@ -37,14 +38,25 @@ int main()
     eMascota arrayMascotas[MASCOTAS];
     mascota_inicializarArrayMascotas(arrayMascotas,MASCOTAS);
 
+    //--------------------
+    tipo_imprimirTipos(arrayTipos,TIPOS);
+    printf("\n\n");
+    color_imprimirColores(arrayColores,COLORES);
+    printf("\n\n");
+    //--------------------
 
+    mascota_altaForzada(arrayMascotas,MASCOTAS,"Pepe",1,1,2);
+    mascota_altaForzada(arrayMascotas,MASCOTAS,"Fatiga",2,2,11);
+    mascota_imprimirMascotas(arrayMascotas,MASCOTAS);
+
+    printf("\n\n\n");
+    printf("\t***** Veterinaria *****");
 
     do{
 
         getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Mascotas\n6.Listar Tipos\n7.Listar Colores\n8.Listar Servicios\n9.Alta Trabajo\n11.Listar Trabajo\n12.Salir\n","\nNo valida\n",&menu,1,12,1);
-        /*switch(menu)
+        switch(menu)
         {
-
             case 1:
 
                 indice = mascota_buscarLugarLibre(arrayMascotas,MASCOTAS);
@@ -54,7 +66,19 @@ int main()
                         flag = 1;
                 }
                 break;
-        }*/
+             case 2:
+
+                //if(flag!=0){
+                    mascota_mostrarMascotaID(arrayMascotas,MASCOTAS);
+                    //getValidInt("\tID a modificar: ","\nID No valido\n",&auxiliarId,0,EMPLOYEES,2);
+                    //employee_updateEmployee(arrayEmployees,EMPLOYEES,auxiliarId);
+               /*}
+                else{
+
+                    printf("\nDebe ingresar almenos una mascota\n");
+                }*/
+                break;
+        }
     }while(menu != 12);
 
 

@@ -11,3 +11,4 @@ typedef struct{
 
 int tipo_inicializarTipo(eTipo* arrayTipos, int limite);
 int tipo_altaForzada(eTipo* arrayTipos,int limite,char* descripcion);
+int tipo_imprimirTipos(eTipo* arrayTipos,int limite);

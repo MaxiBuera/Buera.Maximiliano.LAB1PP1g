@@ -3,9 +3,9 @@
 #include <string.h>
 #include <ctype.h>
 #include "utn.h"
-#include "mascota.h"
 #include "tipo.h"
 #include "color.h"
+#include "mascota.h"
 #define TIPO_ID_MIN 1000
 #define TIPO_ID_MAX 2000
 #define COLOR_ID_MIN 5000
@@ -101,7 +101,7 @@ int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos 
         returnValue = -2;
         id = nextId();
 
-        if(getStringLetras("\nIngrese nombre: ",nombreAux)){
+        if(getStringLetras("\nIngrese nombre de la mascota: ",nombreAux)){
 
             if(!getValidInt("Ingrese ID del tipo: ","\nError\n",&idTipoAux,TIPO_ID_MIN,TIPO_ID_MAX,2) && (!verificarTipo(arrayTipos,limiteTipos,idTipoAux))){
 
@@ -272,6 +272,49 @@ int mascota_eliminarMascota(eMascota* arrayMascotas, int limite,int indice){
 
         printf("\nID no encontrado");
     }
+    return returnValue;
+}
+
+int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite){
+
+    int returnValue = -1;
+    int i;
+    if(limite > 0 && arrayMascotas != NULL)
+    {
+        returnValue = 0;
+        printf("\n\tNombre\t\tidTipo\t\tidColor\t\tEdad\t\tID");
+        printf("\n\t------------------------------------------------------------------------");
+        for(i=0;i<limite;i++)
+        {
+        	if(!arrayMascotas[i].isEmpty)
+            {
+
+           		printf("\n%15s %11d %15d %15d %15d",arrayMascotas[i].nombre,arrayMascotas[i].idColor,arrayMascotas[i].idTipo,arrayMascotas[i].edad,arrayMascotas[i].id);
+           	}
+        }
+    }
+    return returnValue;
+}
+
+int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite){
+
+    int returnValue = -1;
+    int i;
+    if(limite > 0 && arrayMascotas != NULL)
+    {
+        returnValue = 0;
+        printf("\n\tNombre\t\t\tID");
+        printf("\n\t----------------------------------");
+        for(i=0;i<limite;i++)
+        {
+        	if(!arrayMascotas[i].isEmpty)
+            {
+
+           		printf("\n%16s %9d",arrayMascotas[i].nombre,arrayMascotas[i].id);
+        	}
+        }
+    }
+    printf("\n\n");
     return returnValue;
 }
 
