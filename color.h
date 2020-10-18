@@ -9,8 +9,8 @@ typedef struct{
 
 #endif // COLOR_H_INCLUDED
 
-int color_inicializarColor(eColor* arrayColor, int limite);
+int color_inicializarArrayColores(eColor* arrayColores, int limite);
 
-int color_altaForzada(eColor* arrayColor,int limite,char* nombreColor);
+int color_altaForzada(eColor* arrayColores,int limite,char* nombreColor);
 
-int color_imprimirColores(eColor* arrayColor,int limite);
+int color_imprimirColores(eColor* arrayColores,int limite);

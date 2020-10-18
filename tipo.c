@@ -15,7 +15,7 @@
 
 static int nextId();
 
-int tipo_inicializarTipo(eTipo* arrayTipos, int limite){
+int tipo_inicializarArrayTipos(eTipo* arrayTipos, int limite){
 
     int returnValue = -1;
     int i;
@@ -87,7 +87,7 @@ int tipo_imprimirTipos(eTipo* arrayTipos,int limite){
         	if(!arrayTipos[i].isEmpty)
             {
 
-           		printf("\n%10d %17s",arrayTipos[i].id,arrayTipos[i].descripcion);
+           		printf("\n%12d %15s",arrayTipos[i].id,arrayTipos[i].descripcion);
            	}
         }
     }

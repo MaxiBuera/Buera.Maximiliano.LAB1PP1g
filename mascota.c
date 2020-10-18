@@ -5,6 +5,7 @@
 #include "utn.h"
 #include "tipo.h"
 #include "color.h"
+#include "servicio.h"
 #include "mascota.h"
 #define TIPO_ID_MIN 1000
 #define TIPO_ID_MAX 2000
@@ -202,7 +203,7 @@ void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayT
     int edadAux;
 
 
-    printf("\nMascota a Modificar: %s ",arrayMascotas[indice].nombre);
+    printf("\n\tMascota a Modificar: %s ",arrayMascotas[indice].nombre);
 
     do{
 
@@ -210,7 +211,9 @@ void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayT
         switch(opc)
         {
             case 1:
-                if(!getValidInt("Ingrese ID del tipo: ","\nError\n",&idTipoAux,TIPO_ID_MIN,TIPO_ID_MAX,2) && (!verificarTipo(arrayTipos,limiteTipos,idTipoAux))){
+                printf("\n\t***Tipos***\n");
+                tipo_imprimirTipos(arrayTipos,limiteTipos);
+                if(!getValidInt("\n\n\tIngrese ID del tipo de mascota: ","\nError. ID no encontrado\n",&idTipoAux,TIPO_ID_MIN,TIPO_ID_MAX,2) && (!verificarTipo(arrayTipos,limiteTipos,idTipoAux))){
 
                     arrayMascotas[indice].idTipo = idTipoAux;
                     printf("\nTipo de Mascota Modificado...");
@@ -218,7 +221,6 @@ void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayT
                 break;
             case 2:
                 if(!getValidInt("Ingrese edad: ","\nError\n",&edadAux,0,35,2)){
-
                     arrayMascotas[indice].edad = edadAux;
                     printf("\nEdad de la Mascota Modificado...");
                 }
@@ -241,8 +243,7 @@ int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eT
         returnValue = 0;
     }
     else{
-
-        printf("\nError");
+        printf("\nID No encotrado");
     }
     return returnValue;
 }
@@ -282,6 +283,7 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite){
     if(limite > 0 && arrayMascotas != NULL)
     {
         returnValue = 0;
+        printf("\n\t***Mascotas***\n");
         printf("\n\tNombre\t\tidTipo\t\tidColor\t\tEdad\t\tID");
         printf("\n\t------------------------------------------------------------------------");
         for(i=0;i<limite;i++)
@@ -289,7 +291,7 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite){
         	if(!arrayMascotas[i].isEmpty)
             {
 
-           		printf("\n%15s %11d %15d %15d %15d",arrayMascotas[i].nombre,arrayMascotas[i].idColor,arrayMascotas[i].idTipo,arrayMascotas[i].edad,arrayMascotas[i].id);
+           		printf("\n%15s %11d %15d %15d %14d",arrayMascotas[i].nombre,arrayMascotas[i].idColor,arrayMascotas[i].idTipo,arrayMascotas[i].edad,arrayMascotas[i].id);
            	}
         }
     }
@@ -310,7 +312,7 @@ int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite){
         	if(!arrayMascotas[i].isEmpty)
             {
 
-           		printf("\n%16s %9d",arrayMascotas[i].nombre,arrayMascotas[i].id);
+           		printf("\n%15s %17d",arrayMascotas[i].nombre,arrayMascotas[i].id);
         	}
         }
     }

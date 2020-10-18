@@ -23,3 +23,7 @@ int mascota_altaForzada(eMascota* arrayMascotas,int limite,char* nombre,int idCo
 int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite);
 
 int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite);
+
+int mascota_eliminarMascota(eMascota* arrayMascotas, int limite,int indice);
+
+int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores);

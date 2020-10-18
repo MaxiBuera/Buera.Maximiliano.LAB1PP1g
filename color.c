@@ -15,33 +15,33 @@
 
 static int nextId();
 
-int color_inicializarColor(eColor* arrayColor, int limite){
+int color_inicializarArrayColores(eColor* arrayColores, int limite){
 
     int returnValue = -1;
     int i;
-    if(limite > 0 && arrayColor != NULL)
+    if(limite > 0 && arrayColores != NULL)
     {
         returnValue = 0;
         for(i=0;i<limite;i++)
         {
-            arrayColor[i].id = -1;
-            strcpy(arrayColor[i].nombreColor,"");
-            arrayColor[i].isEmpty = LIBRE;
+            arrayColores[i].id = -1;
+            strcpy(arrayColores[i].nombreColor,"");
+            arrayColores[i].isEmpty = LIBRE;
         }
     }
     return returnValue;
 }
 
-int color_buscarLugarLibre(eColor* arrayColor,int limite)
+int color_buscarLugarLibre(eColor* arrayColores,int limite)
 {
     int returnValue = -1;
     int i;
-    if(limite > 0 && arrayColor != NULL)
+    if(limite > 0 && arrayColores != NULL)
     {
         returnValue = -2;
         for(i=0;i<limite;i++)
         {
-            if(arrayColor[i].isEmpty == LIBRE)
+            if(arrayColores[i].isEmpty == LIBRE)
             {
                 returnValue = i;
                 break;
@@ -51,43 +51,43 @@ int color_buscarLugarLibre(eColor* arrayColor,int limite)
     return returnValue;
 }
 
-int color_altaForzada(eColor* arrayColor,int limite,char* nombreColor)
+int color_altaForzada(eColor* arrayColores,int limite,char* nombreColor)
 {
     int returnValue = -1;
     int i;
 
-    if(limite > 0 && arrayColor != NULL)
+    if(limite > 0 && arrayColores != NULL)
     {
-        i = color_buscarLugarLibre(arrayColor,limite);
+        i = color_buscarLugarLibre(arrayColores,limite);
         if(i >= 0)
         {
             returnValue = 0;
-            strcpy(arrayColor[i].nombreColor,nombreColor);
+            strcpy(arrayColores[i].nombreColor,nombreColor);
             //------------------------------
             //------------------------------
-            arrayColor[i].id = nextId();
-            arrayColor[i].isEmpty = OCUPADO;
+            arrayColores[i].id = nextId();
+            arrayColores[i].isEmpty = OCUPADO;
         }
         returnValue = 0;
     }
     return returnValue;
 }
 
-int color_imprimirColores(eColor* arrayColor,int limite){
+int color_imprimirColores(eColor* arrayColores,int limite){
 
     int returnValue = -1;
     int i;
-    if(limite > 0 && arrayColor != NULL)
+    if(limite > 0 && arrayColores != NULL)
     {
         returnValue = 0;
         printf("\n\tID Color\t\tColor");
         printf("\n\t--------------------------------");
         for(i=0;i<limite;i++)
         {
-        	if(!arrayColor[i].isEmpty)
+        	if(!arrayColores[i].isEmpty)
             {
 
-           		printf("\n%12d %24s",arrayColor[i].id,arrayColor[i].nombreColor);
+           		printf("\n%12d %24s",arrayColores[i].id,arrayColores[i].nombreColor);
            	}
         }
     }
