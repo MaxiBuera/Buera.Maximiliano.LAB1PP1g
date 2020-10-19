@@ -80,8 +80,9 @@ int tipo_imprimirTipos(eTipo* arrayTipos,int limite){
     if(limite > 0 && arrayTipos != NULL)
     {
         returnValue = 0;
+        printf("\n\t***Tipos de Mascotas***\n");
         printf("\n\tID\t\tTipo");
-        printf("\n\t--------------------------------");
+        printf("\n\t-----------------------------");
         for(i=0;i<limite;i++)
         {
         	if(!arrayTipos[i].isEmpty)
@@ -90,6 +91,7 @@ int tipo_imprimirTipos(eTipo* arrayTipos,int limite){
            		printf("\n%12d %15s",arrayTipos[i].id,arrayTipos[i].descripcion);
            	}
         }
+        printf("\n");
     }
     return returnValue;
 }

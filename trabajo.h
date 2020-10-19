@@ -16,8 +16,12 @@ typedef struct{
 
 #endif // TRABAJO_H_INCLUDED
 
-int trabajo_inicializarArrayTrabbajos(eTrabajo* arrayTrabajos, int limite);
+int trabajo_inicializarArrayTrabajos(eTrabajo* arrayTrabajos, int limite);
 
 int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio);
 
 int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite);
+
+int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas ,int limiteMascotas,eServicio* arrayServicios,int limiteServicios, int indice);
+
+int trabajo_buscarLugarLibre(eTrabajo* arrayTrabajos,int limite);

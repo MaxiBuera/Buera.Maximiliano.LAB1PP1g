@@ -15,3 +15,5 @@ int servicio_inicializarArrayServicios(eServicio* arrayServicios, int limite);
 int servicio_altaForzada(eServicio* arrayServicios,int limite,char* nombreColor, float precio);
 
 int servicio_imprimirServicios(eServicio* arrayServicios,int limite);
+
+int servicio_mostrarServicioID(eServicio* arrayServicios,int limite);

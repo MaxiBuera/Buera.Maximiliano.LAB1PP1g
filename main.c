@@ -6,8 +6,8 @@
 #include "tipo.h"
 #include "color.h"
 #include "servicio.h"
-#include "trabajo.h"
 #include "mascota.h"
+#include "trabajo.h"
 #define MASCOTAS 20
 #define TIPOS 5
 #define COLORES 5
@@ -45,9 +45,9 @@ int main()
     servicio_altaForzada(arrayServicios,SERVICIOS,"Desparasitado",300);
     servicio_altaForzada(arrayServicios,SERVICIOS,"Castrado",400);
 
-    /*eTrabajo arrayTrabajos[TRABAJOS];
-    trabajo_inicializarArrayTrabbajos(arrayTrabajos,TRABAJOS);
-    trabajo_altaForzada(arrayTrabajos,TRABAJOS,0,2000);*/
+    eTrabajo arrayTrabajos[TRABAJOS];
+    trabajo_inicializarArrayTrabajos(arrayTrabajos,TRABAJOS);
+    trabajo_altaForzada(arrayTrabajos,TRABAJOS,0,2000);
 
     eMascota arrayMascotas[MASCOTAS];
     mascota_inicializarArrayMascotas(arrayMascotas,MASCOTAS);
@@ -58,6 +58,8 @@ int main()
     color_imprimirColores(arrayColores,COLORES);
     printf("\n\n");
     servicio_imprimirServicios(arrayServicios,SERVICIOS);
+    printf("\n\n");
+    trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS);
     printf("\n\n");
     //--------------------
 
@@ -112,7 +114,7 @@ int main()
 
                 /*if(flag!=0){
                 */
-                mascota_imprimirMascotas(arrayMascotas,MASCOTAS);
+                //mascota_imprimirMascotas(arrayMascotas,MASCOTAS);
                 /*}
                 else{
 
@@ -156,7 +158,20 @@ int main()
 
                 /*if(flag!=0){
                 */
-                //trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS);
+                indice = trabajo_buscarLugarLibre(arrayTrabajos,TRABAJOS);
+                if(indice >= 0)
+                    trabajo_agregarTrabajo(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS,indice);
+                /*}
+                else{
+
+                    printf("\nDebe ingresar un empleado\n");
+                }*/
+                break;
+            case 9:
+
+                /*if(flag!=0){
+                */
+                trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS);
                 /*}
                 else{
 

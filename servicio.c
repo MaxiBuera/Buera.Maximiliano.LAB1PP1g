@@ -85,6 +85,7 @@ int servicio_imprimirServicios(eServicio* arrayServicios,int limite){
     if(limite > 0 && arrayServicios != NULL)
     {
         returnValue = 0;
+        printf("\n\t***Servicios***\n");
         printf("\n\tID Color\tServicio\t\tPrecio");
         printf("\n\t-----------------------------------------------");
         for(i=0;i<limite;i++)
@@ -92,9 +93,33 @@ int servicio_imprimirServicios(eServicio* arrayServicios,int limite){
         	if(!arrayServicios[i].isEmpty)
             {
 
-           		printf("\n%12d %24s \t\t$%.2f",arrayServicios[i].id,arrayServicios[i].descripcion,arrayServicios[i].precio);
+           		printf("\n%12d %24s\t\t$%.2f",arrayServicios[i].id,arrayServicios[i].descripcion,arrayServicios[i].precio);
            	}
         }
+        printf("\n");
+    }
+    return returnValue;
+}
+
+int servicio_mostrarServicioID(eServicio* arrayServicios,int limite){
+
+    int returnValue = -1;
+    int i;
+    if(limite > 0 && arrayServicios != NULL)
+    {
+        returnValue = 0;
+        printf("\n\t**** Lista de Servicios ****\n");
+        printf("\n\tID\t\tServicio");
+        printf("\n\t-------------------------------------------");
+        for(i=0;i<limite;i++)
+        {
+        	if(!arrayServicios[i].isEmpty)
+            {
+
+           		printf("\n%12d %24s",arrayServicios[i].id,arrayServicios[i].descripcion);
+           	}
+        }
+        printf("\n");
     }
     return returnValue;
 }

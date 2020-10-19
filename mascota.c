@@ -291,9 +291,10 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite){
         	if(!arrayMascotas[i].isEmpty)
             {
 
-           		printf("\n%15s %11d %15d %15d %14d",arrayMascotas[i].nombre,arrayMascotas[i].idColor,arrayMascotas[i].idTipo,arrayMascotas[i].edad,arrayMascotas[i].id);
+           		printf("\n%15s %14d %15d %13d %12d",arrayMascotas[i].nombre,arrayMascotas[i].idColor,arrayMascotas[i].idTipo,arrayMascotas[i].edad,arrayMascotas[i].id);
            	}
         }
+        printf("\n");
     }
     return returnValue;
 }
@@ -305,6 +306,7 @@ int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite){
     if(limite > 0 && arrayMascotas != NULL)
     {
         returnValue = 0;
+        printf("\n\t**** Lista de Mascotas ****\n");
         printf("\n\tNombre\t\t\tID");
         printf("\n\t----------------------------------");
         for(i=0;i<limite;i++)

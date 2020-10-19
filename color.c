@@ -80,6 +80,7 @@ int color_imprimirColores(eColor* arrayColores,int limite){
     if(limite > 0 && arrayColores != NULL)
     {
         returnValue = 0;
+        printf("\n\t***Colores***\n");
         printf("\n\tID Color\t\tColor");
         printf("\n\t--------------------------------");
         for(i=0;i<limite;i++)
@@ -90,6 +91,7 @@ int color_imprimirColores(eColor* arrayColores,int limite){
            		printf("\n%12d %24s",arrayColores[i].id,arrayColores[i].nombreColor);
            	}
         }
+        printf("\n");
     }
     return returnValue;
 }
