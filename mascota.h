@@ -40,3 +40,5 @@ int mascota_ordernarPorNombre(eMascota* arrayMascotas,int limite, int orden);
 int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, int orden);
 
 int verificarColor(eColor* arrayColores, int limiteColores, int idColor);
+
+int verificarTipo(eTipo* arrayTipos, int limiteTipos, int idTipo);

@@ -56,7 +56,7 @@ int informes_mostrarMascotasPorTipoSeleccionado(eMascota* arrayMascotas, int lim
     if(arrayMascotas != NULL && limiteMascotas > 0){
 
         tipo_imprimirTipos(arrayTipos,limiteTipos);
-        if(!getValidInt("\nIngrese ID del tipo: ","\nError\n",&idTipoAux,COLOR_MIN_ID,MAX,1) && (!verificarTipo(arrayTipos,limiteTipos,idTipoAux))){
+        if(!getValidInt("\nIngrese ID del tipo: ","\nError\n",&idTipoAux,TIPO_MIN_ID,MAX,1) && (!verificarTipo(arrayTipos,limiteTipos,idTipoAux))){
 
             printf("\n\t*** Mascotas del tipo seleccionado***");
             printf("\n\t--------------------------------");
