@@ -8,13 +8,14 @@
 #include "servicio.h"
 #include "mascota.h"
 #include "trabajo.h"
-#include "cliente.h"
 #include "informes.h"
 #define MASCOTAS 20
 #define TIPOS 5
 #define COLORES 5
 #define SERVICIOS 3
 #define TRABAJOS 10
+#define CLIENTES 3
+
 
 int main()
 {
@@ -51,33 +52,40 @@ int main()
     mascota_inicializarArrayMascotas(arrayMascotas,MASCOTAS);
 
     //--------------------
-    tipo_imprimirTipos(arrayTipos,TIPOS);
+    /*tipo_imprimirTipos(arrayTipos,TIPOS);
     printf("\n\n");
     color_imprimirColores(arrayColores,COLORES);
     printf("\n\n");
     servicio_imprimirServicios(arrayServicios,SERVICIOS);
-    printf("\n\n");
+    printf("\n\n");*/
     //--------------------
 
-    mascota_altaForzada(arrayMascotas,MASCOTAS,"Pepe",5000,1000,2);
-    mascota_altaForzada(arrayMascotas,MASCOTAS,"Fatiga",5002,1002,11);
-    mascota_altaForzada(arrayMascotas,MASCOTAS,"Pedro",5004,1000,12);
-    mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES);
+     eCliente arrayClientes[CLIENTES]=
+    {
+        {0,"Alberto",'m'},
+        {1,"Florencia",'f'},
+        {2,"Guillermo",'m'},
+    };
+
+    mascota_altaForzada(arrayMascotas,MASCOTAS,"Pepe",5000,1000,2,0);
+    mascota_altaForzada(arrayMascotas,MASCOTAS,"Fatiga",5002,1002,11,1);
+    mascota_altaForzada(arrayMascotas,MASCOTAS,"Pedro",5004,1000,12,2);
+    //mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES);
 
     eTrabajo arrayTrabajos[TRABAJOS];
     trabajo_inicializarArrayTrabajos(arrayTrabajos,TRABAJOS);
     trabajo_altaForzada(arrayTrabajos,TRABAJOS,0,20000);
     trabajo_altaForzada(arrayTrabajos,TRABAJOS,1,20002);
 
-    trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS);
-    printf("\n\n");
+    //trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS);
+    //printf("\n\n");
 
     printf("\n\n\n");
     printf("\t***** Veterinaria *****");
-    printf("\n\n");
+    printf("\n");
     do{
 
-        getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n10.Salir\n","\nNo valida\n",&menu,1,12,1);
+        getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n\n**** Informes *****\n\n10.Mostrar las mascotas del color seleccionado\n11.Mostrar las mascotas del tipo seleccionado\n12.Salir\n","\nNo valida\n",&menu,1,12,1);
         switch(menu)
         {
             case 1:
@@ -121,7 +129,7 @@ int main()
                 */
                 mascota_ordernarPorTipo(arrayMascotas,MASCOTAS,0);
                 mascota_ordernarPorNombre(arrayMascotas,MASCOTAS,0);
-                mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES);
+                mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES);
                 /*}
                 else{
 
@@ -185,8 +193,27 @@ int main()
                     printf("\nDebe ingresar un empleado\n");
                 }*/
                 break;
+            case 10:
+                /*if(flag!=0){
+                */
+                informes_mostrarMascotasPorColorSeleccionado(arrayMascotas,MASCOTAS,arrayColores,COLORES);
+                /*}
+                else{
+
+                    printf("\nDebe ingresar un empleado\n");
+                }*/
+                break;
+            case 11:
+                /*if(flag!=0){
+                */
+                informes_mostrarMascotasPorTipoSeleccionado(arrayMascotas,MASCOTAS,arrayTipos,TIPOS);
+                /*}
+                else{
+
+                    printf("\nDebe ingresar un empleado\n");
+                }*/
         }
-    }while(menu != 12);
+    }while(menu != 15);
 
 
     return 0;

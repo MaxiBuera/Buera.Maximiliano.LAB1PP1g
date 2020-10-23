@@ -1,6 +1,2 @@
-#ifndef INFORMES_H_INCLUDED
-#define INFORMES_H_INCLUDED
-
-
-
-#endif // INFORMES_H_INCLUDED
+int informes_mostrarMascotasPorColorSeleccionado(eMascota* arrayMascotas, int limiteMascotas, eColor* arrayColores, int limiteColores);
+int informes_mostrarMascotasPorTipoSeleccionado(eMascota* arrayMascotas, int limiteMascotas, eTipo* arrayTipos, int limiteTipos);

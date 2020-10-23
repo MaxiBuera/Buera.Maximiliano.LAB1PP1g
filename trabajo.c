@@ -123,7 +123,7 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
     {
         retorno = 0;
         printf("\n\t**** Trabajos ****\n");
-        printf("\n\tID Trabajo\tMascota\tServicio");
+        printf("\n\tID Trabajo\tMascota\t\tServicio");
         printf("\n\t-----------------------------------------------");
         for(i=0;i<limite;i++)
         {
