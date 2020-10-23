@@ -17,11 +17,11 @@ static int nextId();
 
 int trabajo_inicializarArrayTrabajos(eTrabajo* arrayTrabajos, int limite){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayTrabajos != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         for(i=0;i<limite;i++)
         {
             arrayTrabajos[i].id = -1;
@@ -30,31 +30,31 @@ int trabajo_inicializarArrayTrabajos(eTrabajo* arrayTrabajos, int limite){
             arrayTrabajos[i].isEmpty = LIBRE;
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 int trabajo_buscarLugarLibre(eTrabajo* arrayTrabajos,int limite)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayTrabajos != NULL)
     {
-        returnValue = -2;
+        retorno = -2;
         for(i=0;i<limite;i++)
         {
             if(arrayTrabajos[i].isEmpty == LIBRE)
             {
-                returnValue = i;
+                retorno = i;
                 break;
             }
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
 
     if(limite > 0 && arrayTrabajos != NULL)
@@ -62,7 +62,7 @@ int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idS
         i = trabajo_buscarLugarLibre(arrayTrabajos,limite);
         if(i >= 0)
         {
-            returnValue = 0;
+            retorno = 0;
             arrayTrabajos[i].idMascota = idMascota;
             arrayTrabajos[i].idServicio = idServicio;
             //------------------------------
@@ -70,20 +70,20 @@ int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idS
             arrayTrabajos[i].id = nextId();
             arrayTrabajos[i].isEmpty = OCUPADO;
         }
-        returnValue = 0;
+        retorno = 0;
     }
-    return returnValue;
+    return retorno;
 }
 
 int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas,int limiteMascotas,eServicio* arrayServicios,int limiteServicios){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i,j,k;
     char nombreMascota[20];
     char nombreServicio[25];
     if(limite > 0 && arrayTrabajos != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         printf("\n\t**** Trabajos ****\n");
         printf("\n\tID Trabajo\tID Mascota\tID Servicio");
         printf("\n\t-----------------------------------------------");
@@ -111,7 +111,7 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
         }
         printf("\n");
     }
-    return returnValue;
+    return retorno;
 }
 
 int verificarMascota(eMascota* arrayMascotas, int limiteMascotas, int idMascotas){
@@ -151,14 +151,14 @@ int verificarServicio(eServicio* arrayServicios, int limiteServicios, int idServ
 //Se dará de alta cada ocurrencia de trabajo pidiéndole al usuario que elija una mascota y un Servicio
 int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas ,int limiteMascotas,eServicio* arrayServicios,int limiteServicios, int indice){
 
-    int returnValue = -1;
+    int retorno = -1;
     int idMascotaAux;
     int idServicioAux;
     int id;
 
     if(limite > 0 && arrayTrabajos != NULL){
 
-        returnValue = -2;
+        retorno = -2;
         id = nextId();
 
         mascota_mostrarMascotaID(arrayMascotas,limiteMascotas);
@@ -172,17 +172,40 @@ int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMas
                 arrayTrabajos[indice].isEmpty = OCUPADO;
                 arrayTrabajos[indice].id = id;
                 printf("\n\tTrabajo Agregado...");
-                returnValue = 0;
+                retorno = 0;
             }
         }
     }
 
-    if(returnValue != 0){
+    if(retorno != 0){
 
         printf("\nID no valido\n");
     }
 
-    return returnValue;
+    return retorno;
+}
+
+int trabajo_mascotaEliminada(eTrabajo* arrayTrabajos, int limite, eMascota* arrayMascotas, int limiteMascotas){
+
+    int retorno = -1;
+    int i,j;
+
+    if(arrayMascotas != NULL && limiteMascotas < 0){
+
+        for(i=0;i<limite;i++){
+
+            for(j=0;j<limiteMascotas;j++){
+
+                if(arrayTrabajos[i].idMascota == arrayMascotas[j].id && arrayMascotas[j].isEmpty == 0){
+
+                    arrayTrabajos[i].isEmpty = LIBRE;
+                    retorno = 0;
+                }
+            }
+        }
+    }
+
+    return retorno;
 }
 
 static int nextId()

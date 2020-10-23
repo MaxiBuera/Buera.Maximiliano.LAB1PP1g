@@ -16,11 +16,11 @@ static int nextId();
 
 int tipo_inicializarArrayTipos(eTipo* arrayTipos, int limite){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayTipos != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         for(i=0;i<limite;i++)
         {
             arrayTipos[i].id = -1;
@@ -28,31 +28,31 @@ int tipo_inicializarArrayTipos(eTipo* arrayTipos, int limite){
             arrayTipos[i].isEmpty = LIBRE;
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 int tipo_buscarLugarLibre(eTipo* arrayTipos,int limite)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayTipos != NULL)
     {
-        returnValue = -2;
+        retorno = -2;
         for(i=0;i<limite;i++)
         {
             if(arrayTipos[i].isEmpty == LIBRE)
             {
-                returnValue = i;
+                retorno = i;
                 break;
             }
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 int tipo_altaForzada(eTipo* arrayTipos,int limite,char* descripcion)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
 
     if(limite > 0 && arrayTipos != NULL)
@@ -60,25 +60,25 @@ int tipo_altaForzada(eTipo* arrayTipos,int limite,char* descripcion)
         i = tipo_buscarLugarLibre(arrayTipos,limite);
         if(i >= 0)
         {
-            returnValue = 0;
+            retorno = 0;
             strcpy(arrayTipos[i].descripcion,descripcion);
             //------------------------------
             //------------------------------
             arrayTipos[i].id = nextId();
             arrayTipos[i].isEmpty = OCUPADO;
         }
-        returnValue = 0;
+        retorno = 0;
     }
-    return returnValue;
+    return retorno;
 }
 
 int tipo_imprimirTipos(eTipo* arrayTipos,int limite){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayTipos != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         printf("\n\t***Tipos de Mascotas***\n");
         printf("\n\tID\t\tTipo");
         printf("\n\t-----------------------------");
@@ -92,7 +92,7 @@ int tipo_imprimirTipos(eTipo* arrayTipos,int limite){
         }
         printf("\n");
     }
-    return returnValue;
+    return retorno;
 }
 
 static int nextId()

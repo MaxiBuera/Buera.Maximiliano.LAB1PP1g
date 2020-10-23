@@ -35,11 +35,11 @@ void mascota_normalizarCadena(char cadena[]){
 
 int mascota_inicializarArrayMascotas(eMascota* arrayMascotas, int limite){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayMascotas != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         for(i=0;i<limite;i++)
         {
             arrayMascotas[i].id = -1;
@@ -50,7 +50,7 @@ int mascota_inicializarArrayMascotas(eMascota* arrayMascotas, int limite){
             arrayMascotas[i].isEmpty = LIBRE;
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 int verificarTipo(eTipo* arrayTipos, int limiteTipos, int idTipo){
@@ -89,7 +89,7 @@ int verificarColor(eColor* arrayColores, int limiteColores, int idColor){
 
 int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos ,int limiteTipos,eColor* arrayColores,int limiteColores, int indice){
 
-    int returnValue = -1;
+    int retorno = -1;
     char nombreAux[20];
     int idTipoAux;
     int idColorAux;
@@ -98,7 +98,7 @@ int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos 
 
     if(limite > 0 && arrayMascotas != NULL){
 
-        returnValue = -2;
+        retorno = -2;
         id = nextId();
 
         if(getStringLetras("\nIngrese nombre de la mascota: ",nombreAux)){
@@ -120,43 +120,43 @@ int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos 
                         arrayMascotas[indice].isEmpty = OCUPADO;
                         arrayMascotas[indice].id = id;
                         printf("\n\tMascota Agregada...");
-                        returnValue = 0;
+                        retorno = 0;
                     }
                 }
             }
         }
     }
 
-    if(returnValue != 0){
+    if(retorno != 0){
 
         printf("\nError. Dato invalido\n");
     }
 
-    return returnValue;
+    return retorno;
 }
 
 int mascota_buscarLugarLibre(eMascota* arrayMascotas,int limite)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayMascotas != NULL)
     {
-        returnValue = -2;
+        retorno = -2;
         for(i=0;i<limite;i++)
         {
             if(arrayMascotas[i].isEmpty == LIBRE)
             {
-                returnValue = i;
+                retorno = i;
                 break;
             }
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 int mascota_altaForzada(eMascota* arrayMascotas,int limite,char* nombre,int idColor, int idTipo,int edad)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
 
     if(limite > 0 && arrayMascotas != NULL)
@@ -164,7 +164,7 @@ int mascota_altaForzada(eMascota* arrayMascotas,int limite,char* nombre,int idCo
         i = mascota_buscarLugarLibre(arrayMascotas,limite);
         if(i >= 0)
         {
-            returnValue = 0;
+            retorno = 0;
             strcpy(arrayMascotas[i].nombre,nombre);
             arrayMascotas[i].idColor = idColor;
             arrayMascotas[i].idTipo = idTipo;
@@ -174,28 +174,28 @@ int mascota_altaForzada(eMascota* arrayMascotas,int limite,char* nombre,int idCo
             arrayMascotas[i].id = nextId();
             arrayMascotas[i].isEmpty = OCUPADO;
         }
-        returnValue = 0;
+        retorno = 0;
     }
-    return returnValue;
+    return retorno;
 }
 
 int mascota_buscarMascotaPorId(eMascota* arrayMascotas,int limite, int id)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayMascotas != NULL)
     {
-        returnValue = -2;
+        retorno = -2;
         for(i=0;i<limite;i++)
         {
             if(arrayMascotas[i].isEmpty == OCUPADO && arrayMascotas[i].id == id)
             {
-                returnValue = i;
+                retorno = i;
                 break;
             }
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores){
@@ -234,24 +234,24 @@ void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayT
 int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores){
 
     int i;
-    int returnValue = -1;
+    int retorno = -1;
 
     i = mascota_buscarMascotaPorId(arrayMascotas,limite,indice);
     if(i >= 0)
     {
         mascota_menuModificacion(arrayMascotas,i,arrayTipos,limiteTipos,arrayColor,limiteColores);
         arrayMascotas[i].isEmpty = OCUPADO;
-        returnValue = 0;
+        retorno = 0;
     }
     else{
         printf("\nID No encotrado");
     }
-    return returnValue;
+    return retorno;
 }
 
 int mascota_eliminarMascota(eMascota* arrayMascotas, int limite,int indice){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     char confirmacion;
     i = mascota_buscarMascotaPorId(arrayMascotas,limite,indice);
@@ -262,31 +262,34 @@ int mascota_eliminarMascota(eMascota* arrayMascotas, int limite,int indice){
         if(confirmacion == 's' || confirmacion == 'S'){
             arrayMascotas[i].isEmpty = LIBRE;
             printf("\n\n\tMascota Eliminada...");
-            returnValue = 0;
+            retorno = 0;
         }
         else if(confirmacion == 'n' || confirmacion == 'N'){
 
             printf("\n\tMascota No Eliminada...");
-            return returnValue;
+            return retorno;
+        }
+        else{
+            printf("\nError. Vuelva a Intentar");
         }
     }
     else{
 
         printf("\nID no encontrado");
     }
-    return returnValue;
+    return retorno;
 }
 
 int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipos, int limiteTipos,eColor* arrayColores,int limiteColores){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i,j,k;
     char nombreTipo[20];
     char nombreColor[20];
 
     if(limite > 0 && arrayMascotas != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         printf("\n\t***Mascotas***\n");
         printf("\n\tNombre\t\tidColor\t\tidTipo\t\tEdad\t\tID");
         printf("\n\t------------------------------------------------------------------------");
@@ -314,16 +317,16 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipo
         }
         printf("\n");
     }
-    return returnValue;
+    return retorno;
 }
 
 int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayMascotas != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         printf("\n\t**** Lista de Mascotas ****\n");
         printf("\n\tNombre\t\t\tID");
         printf("\n\t----------------------------------");
@@ -337,7 +340,79 @@ int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite){
         }
     }
     printf("\n\n");
-    return returnValue;
+    return retorno;
+}
+
+int mascota_ordernarPorNombre(eMascota* arrayMascotas,int limite, int orden)
+{
+    int retorno = -1;
+    int flagSwap;
+    int i;
+    eMascota auxiliar;
+
+    if(limite > 0 && arrayMascotas != NULL)
+    {
+        retorno = 0;
+        do
+        {
+            flagSwap = 0;
+            for(i=0;i<limite-1;i++)
+            {
+                if(arrayMascotas[i].isEmpty == OCUPADO && arrayMascotas[i+1].isEmpty == OCUPADO )
+                {
+                    if((strcmp(arrayMascotas[i].nombre,arrayMascotas[i+1].nombre) > 0 && !orden) || (strcmp(arrayMascotas[i].nombre,arrayMascotas[i+1].nombre) < 0 && orden)) //<------------
+                    {
+                        auxiliar = arrayMascotas[i];
+                        arrayMascotas[i] = arrayMascotas[i+1];
+                        arrayMascotas[i+1] = auxiliar;
+                        flagSwap = 1;
+                    }
+                }
+            }
+        }while(flagSwap);
+    }
+
+    return retorno;
+}
+
+int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, eTipo* arrayTipos, int limiteTipos , int orden)
+{
+    int retorno = -1;
+    int flagSwap;
+    int i,j;
+    eMascota auxiliar;
+
+    if(limite > 0 && arrayMascotas != NULL)
+    {
+        retorno = 0;
+        do
+        {
+            flagSwap = 0;
+            for(i=0;i<limite-1;i++)
+            {
+                if(arrayMascotas[i].isEmpty == OCUPADO && arrayMascotas[i+1].isEmpty == OCUPADO )
+                {
+
+                    for(j=0;j<limiteTipos;j++){
+
+                        if(arrayMascotas[i].idTipo == arrayTipos[j].id){
+//printf("\n %d - %d | %d %d",arrayMascotas[i].idTipo,arrayTipos[j].id,i,j);
+                            if((strcmp(arrayTipos[j].descripcion,arrayTipos[j+1].descripcion) > 0 && !orden) || (strcmp(arrayTipos[j].descripcion,arrayTipos[j+1].descripcion) < 0 && orden)) //<------------
+                            {
+
+                                auxiliar = arrayMascotas[i];
+                                arrayMascotas[i] = arrayMascotas[i+1];
+                                arrayMascotas[i+1] = auxiliar;
+                                flagSwap = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }while(flagSwap);
+    }
+
+    return retorno;
 }
 
 static int nextId()

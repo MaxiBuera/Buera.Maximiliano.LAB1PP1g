@@ -18,11 +18,11 @@ static int nextId();
 
 int servicio_inicializarArrayServicios(eServicio* arrayServicios, int limite){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayServicios != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         for(i=0;i<limite;i++)
         {
             arrayServicios[i].id = -1;
@@ -31,31 +31,31 @@ int servicio_inicializarArrayServicios(eServicio* arrayServicios, int limite){
             arrayServicios[i].isEmpty = LIBRE;
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 int servicio_buscarLugarLibre(eServicio* arrayServicios,int limite)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayServicios != NULL)
     {
-        returnValue = -2;
+        retorno = -2;
         for(i=0;i<limite;i++)
         {
             if(arrayServicios[i].isEmpty == LIBRE)
             {
-                returnValue = i;
+                retorno = i;
                 break;
             }
         }
     }
-    return returnValue;
+    return retorno;
 }
 
 int servicio_altaForzada(eServicio* arrayServicios,int limite,char* descripcion,float precio)
 {
-    int returnValue = -1;
+    int retorno = -1;
     int i;
 
     if(limite > 0 && arrayServicios != NULL)
@@ -63,7 +63,7 @@ int servicio_altaForzada(eServicio* arrayServicios,int limite,char* descripcion,
         i = servicio_buscarLugarLibre(arrayServicios,limite);
         if(i >= 0)
         {
-            returnValue = 0;
+            retorno = 0;
             strcpy(arrayServicios[i].descripcion,descripcion);
             arrayServicios[i].precio = precio;
             //------------------------------
@@ -71,18 +71,18 @@ int servicio_altaForzada(eServicio* arrayServicios,int limite,char* descripcion,
             arrayServicios[i].id = nextId();
             arrayServicios[i].isEmpty = OCUPADO;
         }
-        returnValue = 0;
+        retorno = 0;
     }
-    return returnValue;
+    return retorno;
 }
 
 int servicio_imprimirServicios(eServicio* arrayServicios,int limite){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayServicios != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         printf("\n\t***Servicios***\n");
         printf("\n\tID Color\tServicio\t\tPrecio");
         printf("\n\t-----------------------------------------------");
@@ -96,16 +96,16 @@ int servicio_imprimirServicios(eServicio* arrayServicios,int limite){
         }
         printf("\n");
     }
-    return returnValue;
+    return retorno;
 }
 
 int servicio_mostrarServicioID(eServicio* arrayServicios,int limite){
 
-    int returnValue = -1;
+    int retorno = -1;
     int i;
     if(limite > 0 && arrayServicios != NULL)
     {
-        returnValue = 0;
+        retorno = 0;
         printf("\n\t**** Lista de Servicios ****\n");
         printf("\n\tID\t\tServicio");
         printf("\n\t-------------------------------------------");
@@ -119,7 +119,7 @@ int servicio_mostrarServicioID(eServicio* arrayServicios,int limite){
         }
         printf("\n");
     }
-    return returnValue;
+    return retorno;
 }
 
 static int nextId()

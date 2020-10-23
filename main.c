@@ -71,7 +71,7 @@ int main()
 
     printf("\n\n\n");
     printf("\t***** Veterinaria *****");
-
+    printf("\n\n");
     do{
 
         getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n10.Salir\n","\nNo valida\n",&menu,1,12,1);
@@ -101,11 +101,11 @@ int main()
              case 3:
 
                  /*if(flag!=0){
-                    employee_orderByLastName(arrayEmployees,EMPLOYEES,0);
                     employee_orderBySector(arrayEmployees,EMPLOYEES,0);*/
                     mascota_mostrarMascotaID(arrayMascotas,MASCOTAS);
                     getValidInt("\nID de Mascota a eliminar: ","\nID No valido\n",&auxiliarId,0,MASCOTAS,2);
                     mascota_eliminarMascota(arrayMascotas,MASCOTAS,auxiliarId);
+                    trabajo_mascotaEliminada(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS);
                 /*}
                 else{
 
@@ -116,6 +116,8 @@ int main()
 
                 /*if(flag!=0){
                 */
+                mascota_ordernarPorTipo(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,1);
+                //mascota_ordernarPorNombre(arrayMascotas,MASCOTAS,0);
                 mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES);
                 /*}
                 else{

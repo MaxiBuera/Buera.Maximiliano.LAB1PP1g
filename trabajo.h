@@ -26,3 +26,5 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
 int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas ,int limiteMascotas,eServicio* arrayServicios,int limiteServicios, int indice);
 
 int trabajo_buscarLugarLibre(eTrabajo* arrayTrabajos,int limite);
+
+int trabajo_mascotaEliminada(eTrabajo* arrayTrabajos, int limite, eMascota* arrayMascotas, int limiteMascotas);

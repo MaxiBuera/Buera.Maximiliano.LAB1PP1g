@@ -123,7 +123,7 @@
 	"color.h"
 	"mascota.h"
 
-1603034190 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\color.c
+1603478967 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\color.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -139,11 +139,11 @@
 
 1603034190 c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\color.h
 
-1603061105 c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\mascota.h
+1603479907 c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\mascota.h
 
 1603032181 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\fecha.c
 
-1603063439 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\main.c
+1603480167 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -152,10 +152,10 @@
 	"tipo.h"
 	"color.h"
 	"servicio.h"
+	"mascota.h"
 	"trabajo.h"
-	"mascota.h"
 
-1603061348 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\mascota.c
+1603481310 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\mascota.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -166,7 +166,7 @@
 	"servicio.h"
 	"mascota.h"
 
-1603061950 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\servicio.c
+1603478967 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\servicio.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -177,7 +177,7 @@
 	"color.h"
 	"mascota.h"
 
-1603034953 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\tipo.c
+1603478967 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\tipo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -187,17 +187,17 @@
 	"color.h"
 	"mascota.h"
 
-1603063063 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\trabajo.c
+1603478967 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"utn.h"
+	"servicio.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
 	"trabajo.h"
-	"servicio.h"
-	"tipo.h"
-	"color.h"
-	"mascota.h"
 
 1603032181 source:c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\utn.c
 	<stdio.h>
@@ -206,9 +206,9 @@
 	<string.h>
 	"utn.h"
 
-1603034283 c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\servicio.h
+1603468729 c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\servicio.h
 
-1603063310 c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\trabajo.h
+1603470782 c:\users\maximiliano.e.buera\desktop\transporte\buera.maximiliano.lab1pp1g\trabajo.h
 
 1603070575 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\servicio.h
 

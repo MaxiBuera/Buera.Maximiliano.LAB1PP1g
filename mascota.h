@@ -27,3 +27,7 @@ int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite);
 int mascota_eliminarMascota(eMascota* arrayMascotas, int limite,int indice);
 
 int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores);
+
+int mascota_ordernarPorNombre(eMascota* arrayMascotas,int limite, int orden);
+
+int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, eTipo* arrayTipos, int limiteTipos , int orden);
