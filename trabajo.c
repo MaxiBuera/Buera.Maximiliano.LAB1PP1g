@@ -123,7 +123,7 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
     {
         retorno = 0;
         printf("\n\t**** Trabajos ****\n");
-        printf("\n\tID Trabajo\tID Mascota\tID Servicio");
+        printf("\n\tID Trabajo\tMascota\tServicio");
         printf("\n\t-----------------------------------------------");
         for(i=0;i<limite;i++)
         {
@@ -144,7 +144,7 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
                     }
                 }
 
-           		printf("\n%12d%15d\t\t%d - %s - %s",arrayTrabajos[i].id,arrayTrabajos[i].idMascota,arrayTrabajos[i].idServicio,nombreMascota,nombreServicio);
+           		printf("\n%12d%15s\t\t%s",arrayTrabajos[i].id,nombreMascota,nombreServicio);
            	}
         }
         printf("\n");

@@ -391,7 +391,7 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipo
     {
         retorno = 0;
         printf("\n\t***Mascotas***\n");
-        printf("\n\tNombre\t\tidColor\t\tidTipo\t\tEdad\t\tID");
+        printf("\n\tNombre\t\tColor\t\tTipo\t\tEdad\t\tID");
         printf("\n\t------------------------------------------------------------------------");
         for(i=0;i<limite;i++)
         {
@@ -412,7 +412,7 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipo
                     }
                 }
 
-           		printf("\n%15s %14d %15d %13d %12d - %s - %s",arrayMascotas[i].nombre,arrayMascotas[i].idColor,arrayMascotas[i].idTipo,arrayMascotas[i].edad,arrayMascotas[i].id,nombreTipo,nombreColor);
+           		printf("\n%15s %14s %15s %13d %12d",arrayMascotas[i].nombre,nombreColor,nombreTipo,arrayMascotas[i].edad,arrayMascotas[i].id);
            	}
         }
         printf("\n");
