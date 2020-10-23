@@ -20,7 +20,7 @@ int mascota_buscarLugarLibre(eMascota* arrayMascotas,int limite);
 
 int mascota_altaForzada(eMascota* arrayMascotas,int limite,char* nombre,int idColor, int idTipo,int edad);
 
-int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite);
+int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipos, int limiteTipos,eColor* arrayColores,int limiteColores);
 
 int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite);
 

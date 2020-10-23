@@ -9,7 +9,7 @@
 #include "mascota.h"
 #include "trabajo.h"
 #define MASCOTAS 20
-#define SERVICIOS 2000
+#define SERVICIOS 20000
 #define OCUPADO 0
 #define LIBRE 1
 
@@ -75,10 +75,12 @@ int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idS
     return returnValue;
 }
 
-int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite){
+int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas,int limiteMascotas,eServicio* arrayServicios,int limiteServicios){
 
     int returnValue = -1;
-    int i;
+    int i,j,k;
+    char nombreMascota[20];
+    char nombreServicio[25];
     if(limite > 0 && arrayTrabajos != NULL)
     {
         returnValue = 0;
@@ -89,8 +91,22 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite){
         {
         	if(!arrayTrabajos[i].isEmpty)
             {
+                for(j=0;j<limiteMascotas;j++){
 
-           		printf("\n%12d%15d\t\t%d",arrayTrabajos[i].id,arrayTrabajos[i].idMascota,arrayTrabajos[i].idServicio);
+                    if(arrayTrabajos[i].idMascota == arrayMascotas[j].id){
+                        strcpy(nombreMascota,arrayMascotas[j].nombre);
+                        continue;
+                    }
+                }
+                for(k=0;k<limiteServicios;k++){
+
+                    if(arrayTrabajos[i].idServicio == arrayServicios[k].id){
+                        strcpy(nombreServicio,arrayServicios[k].descripcion);
+                        continue;
+                    }
+                }
+
+           		printf("\n%12d%15d\t\t%d - %s - %s",arrayTrabajos[i].id,arrayTrabajos[i].idMascota,arrayTrabajos[i].idServicio,nombreMascota,nombreServicio);
            	}
         }
         printf("\n");
@@ -146,10 +162,10 @@ int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMas
         id = nextId();
 
         mascota_mostrarMascotaID(arrayMascotas,limiteMascotas);
-        if(!getValidInt("\nIngrese ID de Mascota: ","\nError\n",&idMascotaAux,0,MASCOTAS,2) && (!verificarMascota(arrayMascotas,limiteMascotas,idMascotaAux))){
+        if(!getValidInt("\nIngrese ID de Mascota: ","\nError\n",&idMascotaAux,0,MASCOTAS,1) && (!verificarMascota(arrayMascotas,limiteMascotas,idMascotaAux))){
 
             servicio_mostrarServicioID(arrayServicios,limiteServicios);
-            if(!getValidInt("\nIngrese ID del Servicio: ","\nError\n",&idServicioAux,SERVICIOS,SERVICIOS+3,2) && (!verificarServicio(arrayServicios,limiteServicios,idServicioAux))){
+            if(!getValidInt("\nIngrese ID del Servicio: ","\nError\n",&idServicioAux,SERVICIOS,SERVICIOS+3,1) && (!verificarServicio(arrayServicios,limiteServicios,idServicioAux))){
 
                 arrayTrabajos[indice].idMascota = idMascotaAux;
                 arrayTrabajos[indice].idServicio = idServicioAux;

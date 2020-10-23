@@ -12,7 +12,7 @@
 #define TIPOS 5
 #define COLORES 5
 #define SERVICIOS 3
-#define TRABAJOS 100
+#define TRABAJOS 10
 
 int main()
 {
@@ -45,10 +45,6 @@ int main()
     servicio_altaForzada(arrayServicios,SERVICIOS,"Desparasitado",300);
     servicio_altaForzada(arrayServicios,SERVICIOS,"Castrado",400);
 
-    eTrabajo arrayTrabajos[TRABAJOS];
-    trabajo_inicializarArrayTrabajos(arrayTrabajos,TRABAJOS);
-    trabajo_altaForzada(arrayTrabajos,TRABAJOS,0,2000);
-
     eMascota arrayMascotas[MASCOTAS];
     mascota_inicializarArrayMascotas(arrayMascotas,MASCOTAS);
 
@@ -59,13 +55,19 @@ int main()
     printf("\n\n");
     servicio_imprimirServicios(arrayServicios,SERVICIOS);
     printf("\n\n");
-    trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS);
-    printf("\n\n");
     //--------------------
 
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Pepe",5000,1000,2);
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Fatiga",5002,1002,11);
-    mascota_imprimirMascotas(arrayMascotas,MASCOTAS);
+    mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES);
+
+    eTrabajo arrayTrabajos[TRABAJOS];
+    trabajo_inicializarArrayTrabajos(arrayTrabajos,TRABAJOS);
+    trabajo_altaForzada(arrayTrabajos,TRABAJOS,0,20000);
+    trabajo_altaForzada(arrayTrabajos,TRABAJOS,1,20002);
+
+    trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS);
+    printf("\n\n");
 
     printf("\n\n\n");
     printf("\t***** Veterinaria *****");
@@ -114,7 +116,7 @@ int main()
 
                 /*if(flag!=0){
                 */
-                //mascota_imprimirMascotas(arrayMascotas,MASCOTAS);
+                mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES);
                 /*}
                 else{
 
@@ -171,7 +173,7 @@ int main()
 
                 /*if(flag!=0){
                 */
-                trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS);
+                trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS);
                 /*}
                 else{
 

@@ -7,12 +7,10 @@
 #include "tipo.h"
 #include "color.h"
 #include "mascota.h"
-#define TIPO_ID_MIN 1000
-#define TIPO_ID_MAX 2000
+#define TIPO_MIN 1000
+#define MAX 10000
 #define COLOR_ID_MIN 5000
-#define COLOR_ID_MAX 6000
-#define SERVICIO_ID_MIN 2000
-#define SERVICIO_ID_MAX 3000
+#define SERVICIO_ID_MIN 20000
 #define OCUPADO 0
 #define LIBRE 1
 
