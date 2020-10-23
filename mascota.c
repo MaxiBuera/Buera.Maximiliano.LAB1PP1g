@@ -15,6 +15,13 @@
 
 static int nextId();
 
+
+/** \brief  Formatea la cadena pasada por parametro (primer letra mayuscula)
+ *
+ * \param   cadena a formatear
+ * \return
+ *
+ */
 void mascota_normalizarCadena(char cadena[]){
 
     int j,i;
@@ -33,6 +40,16 @@ void mascota_normalizarCadena(char cadena[]){
     }
 }
 
+/** \brief  Para indicar que todas las posiciones estan vacias,
+ *          esta funcion coloca el flag (isEmpty) en True en
+ *          todas las posiciones del array
+ *
+ * \param   array de Mascotas
+ * \param   limite del array de Mascotas
+ *
+ * \return 0 si la entrada es correcta, sino -1
+ *
+ */
 int mascota_inicializarArrayMascotas(eMascota* arrayMascotas, int limite){
 
     int retorno = -1;
@@ -53,6 +70,14 @@ int mascota_inicializarArrayMascotas(eMascota* arrayMascotas, int limite){
     return retorno;
 }
 
+/** \brief Verifica si el id pasado por parametro se encuentra en el array
+ *
+ * \param   array de tipos
+ * \param   limite del array de tipos
+ * \param   id a buscar
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int verificarTipo(eTipo* arrayTipos, int limiteTipos, int idTipo){
 
     int i;
@@ -70,6 +95,14 @@ int verificarTipo(eTipo* arrayTipos, int limiteTipos, int idTipo){
     return retorno;
 }
 
+/** \brief Verifica si el id pasado por parametro se encuentra en el array
+ *
+ * \param   array de tipos
+ * \param   limite del array de colores
+ * \param   id a buscar
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int verificarColor(eColor* arrayColores, int limiteColores, int idColor){
 
     int i;
@@ -87,6 +120,18 @@ int verificarColor(eColor* arrayColores, int limiteColores, int idColor){
     return retorno;
 }
 
+/** \brief  agrega una mascota  al array. Validando los tipos y colores
+ *
+ * \param   array de Mascotas
+ * \param   limite del array de mascotas
+ * \param   array de Tipos
+ * \param   limite del array de tipos
+ * \param   array de Colores
+ * \param   limite del array de Colores
+ * \param   indice de lugar libre en el array
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos ,int limiteTipos,eColor* arrayColores,int limiteColores, int indice){
 
     int retorno = -1;
@@ -135,6 +180,13 @@ int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos 
     return retorno;
 }
 
+/** \brief  Busca un espacio libre en el array
+ *
+ * \param   array de Mascotas
+ * \param   limite del array
+ * \return  -1 o -2 si hay algun error, 0 si no
+ *
+ */
 int mascota_buscarLugarLibre(eMascota* arrayMascotas,int limite)
 {
     int retorno = -1;
@@ -154,6 +206,17 @@ int mascota_buscarLugarLibre(eMascota* arrayMascotas,int limite)
     return retorno;
 }
 
+/** \brief  Alta de una mascota, usando datos de los parametros
+ *
+ * \param   array de mascotas
+ * \param   limite del array de mascotas
+ * \param   nombre
+ * \param   idColor
+ * \param   idTipo
+ * \param   edad
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int mascota_altaForzada(eMascota* arrayMascotas,int limite,char* nombre,int idColor, int idTipo,int edad)
 {
     int retorno = -1;
@@ -179,6 +242,13 @@ int mascota_altaForzada(eMascota* arrayMascotas,int limite,char* nombre,int idCo
     return retorno;
 }
 
+/**
+ * \brief Busca una mascota por id dentro del array
+ * \param array de mascotas
+ * \param limite de array de mascotas
+  * \param id a buscar
+ * \return -1 o -2 si falla
+ */
 int mascota_buscarMascotaPorId(eMascota* arrayMascotas,int limite, int id)
 {
     int retorno = -1;
@@ -198,6 +268,17 @@ int mascota_buscarMascotaPorId(eMascota* arrayMascotas,int limite, int id)
     return retorno;
 }
 
+/** \brief  Menu al modificar una mascota
+ *
+ * \param   array de mascotas
+ * \param   indice de mascota a modificar
+ * \param   array de tipos. Verifica el tipo en el array de mascotas
+ * \param   limite del array de tipos
+ * \param   array de colores. Verifica el color en el array de mascotas
+ * \param   limite del array de colores
+ * \return  -
+ *
+ */
 void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores){
 
     int opc;
@@ -230,11 +311,11 @@ void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayT
     }while(opc != 5);
 
 }
-
 int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores){
 
     int i;
     int retorno = -1;
+
 
     i = mascota_buscarMascotaPorId(arrayMascotas,limite,indice);
     if(i >= 0)
@@ -249,6 +330,14 @@ int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eT
     return retorno;
 }
 
+/** \brief  Baja logica de una mascota
+ *
+ * \param   array de mascotas
+ * \param   limite del array de macotas
+ * \param   indice de la mascota
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int mascota_eliminarMascota(eMascota* arrayMascotas, int limite,int indice){
 
     int retorno = -1;
@@ -280,6 +369,17 @@ int mascota_eliminarMascota(eMascota* arrayMascotas, int limite,int indice){
     return retorno;
 }
 
+/** \brief  Muestra la lista de mascotas
+ *
+ * \param   array de Mascotas
+ * \param   limite de Mascotas
+ * \param   array de Tipos
+ * \param   limite del array de tipos
+ * \param   array de Colores
+ * \param   limite del array de colores
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
 int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipos, int limiteTipos,eColor* arrayColores,int limiteColores){
 
     int retorno = -1;
@@ -320,6 +420,13 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipo
     return retorno;
 }
 
+/** \brief  Muestra la lista de las mascotas ( Nombre y id)
+ *
+ * \param   array de Mascotas
+ * \param   limite del array de Mascotas
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
 int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite){
 
     int retorno = -1;
@@ -343,6 +450,14 @@ int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite){
     return retorno;
 }
 
+/** \brief  Ordena el array de mascotas por nombre
+ *
+ * \param   array de Mascotas
+ * \param   limite del array de mascotas
+ * \param   criterio de ordenacion
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
 int mascota_ordernarPorNombre(eMascota* arrayMascotas,int limite, int orden)
 {
     int retorno = -1;
@@ -375,11 +490,19 @@ int mascota_ordernarPorNombre(eMascota* arrayMascotas,int limite, int orden)
     return retorno;
 }
 
-int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, eTipo* arrayTipos, int limiteTipos , int orden)
+/** \brief  Ordena el array de mascotas por tipo
+ *
+ * \param   array de Mascotas
+ * \param   limite del array de mascotas
+ * \param   criterio de ordenacion
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
+int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, int orden)
 {
     int retorno = -1;
     int flagSwap;
-    int i,j;
+    int i;
     eMascota auxiliar;
 
     if(limite > 0 && arrayMascotas != NULL)
@@ -392,20 +515,13 @@ int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, eTipo* arrayTipo
             {
                 if(arrayMascotas[i].isEmpty == OCUPADO && arrayMascotas[i+1].isEmpty == OCUPADO )
                 {
+                    if((arrayMascotas[i].idTipo < arrayMascotas[i+1].idTipo && !orden) || (arrayMascotas[i].idTipo > arrayMascotas[i+1].idTipo && orden)) //<------------
+                    {
 
-                    for(j=0;j<limiteTipos;j++){
-
-                        if(arrayMascotas[i].idTipo == arrayTipos[j].id){
-//printf("\n %d - %d | %d %d",arrayMascotas[i].idTipo,arrayTipos[j].id,i,j);
-                            if((strcmp(arrayTipos[j].descripcion,arrayTipos[j+1].descripcion) > 0 && !orden) || (strcmp(arrayTipos[j].descripcion,arrayTipos[j+1].descripcion) < 0 && orden)) //<------------
-                            {
-
-                                auxiliar = arrayMascotas[i];
-                                arrayMascotas[i] = arrayMascotas[i+1];
-                                arrayMascotas[i+1] = auxiliar;
-                                flagSwap = 1;
-                            }
-                        }
+                        auxiliar = arrayMascotas[i];
+                        arrayMascotas[i] = arrayMascotas[i+1];
+                        arrayMascotas[i+1] = auxiliar;
+                        flagSwap = 1;
                     }
                 }
             }

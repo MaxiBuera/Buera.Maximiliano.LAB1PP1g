@@ -6,6 +6,6 @@ typedef struct{
     char nombre[20];
     char sexo;
     int isEmpty;
-}eMascota;
+}eCliente;
 
 #endif // CLIENTE_H_INCLUDED

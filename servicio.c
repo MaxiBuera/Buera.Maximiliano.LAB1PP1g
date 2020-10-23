@@ -16,6 +16,16 @@
 
 static int nextId();
 
+/** \brief  Para indicar que todas las posiciones estan vacias,
+ *          esta funcion coloca el flag (isEmpty) en True en
+ *          todas las posiciones del array
+ *
+ * \param   array de Trabajos
+ * \param   limite del array de Mascotas
+ *
+ * \return 0 si la entrada es correcta, sino -1
+ *
+ */
 int servicio_inicializarArrayServicios(eServicio* arrayServicios, int limite){
 
     int retorno = -1;
@@ -34,6 +44,13 @@ int servicio_inicializarArrayServicios(eServicio* arrayServicios, int limite){
     return retorno;
 }
 
+/** \brief  Busca un espacio libre en el array
+ *
+ * \param   array de Servicios
+ * \param   limite del array
+ * \return  -1 o -2 si hay algun error, 0 si no
+ *
+ */
 int servicio_buscarLugarLibre(eServicio* arrayServicios,int limite)
 {
     int retorno = -1;
@@ -53,6 +70,15 @@ int servicio_buscarLugarLibre(eServicio* arrayServicios,int limite)
     return retorno;
 }
 
+/** \brief  Alta de un servicio, usando datos de los parametros
+ *
+ * \param   array de servicios
+ * \param   limite del array de servicios
+ * \param   descripcion
+ * \param   precio
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int servicio_altaForzada(eServicio* arrayServicios,int limite,char* descripcion,float precio)
 {
     int retorno = -1;
@@ -76,6 +102,13 @@ int servicio_altaForzada(eServicio* arrayServicios,int limite,char* descripcion,
     return retorno;
 }
 
+/** \brief  Muestra la lista de servicios
+ *
+ * \param   array de servicios
+ * \param   limite de servicios
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
 int servicio_imprimirServicios(eServicio* arrayServicios,int limite){
 
     int retorno = -1;
@@ -99,6 +132,13 @@ int servicio_imprimirServicios(eServicio* arrayServicios,int limite){
     return retorno;
 }
 
+/** \brief  Muestra la lista de las Servicios ( Nombre y id)
+ *
+ * \param   array de Servicios
+ * \param   limite del array de Servicios
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
 int servicio_mostrarServicioID(eServicio* arrayServicios,int limite){
 
     int retorno = -1;

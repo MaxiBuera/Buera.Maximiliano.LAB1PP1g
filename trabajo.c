@@ -15,6 +15,17 @@
 
 static int nextId();
 
+
+/** \brief  Para indicar que todas las posiciones estan vacias,
+ *          esta funcion coloca el flag (isEmpty) en True en
+ *          todas las posiciones del array
+ *
+ * \param   array de Trabajos
+ * \param   limite del array de Mascotas
+ *
+ * \return 0 si la entrada es correcta, sino -1
+ *
+ */
 int trabajo_inicializarArrayTrabajos(eTrabajo* arrayTrabajos, int limite){
 
     int retorno = -1;
@@ -33,6 +44,13 @@ int trabajo_inicializarArrayTrabajos(eTrabajo* arrayTrabajos, int limite){
     return retorno;
 }
 
+/** \brief  Busca un espacio libre en el array
+ *
+ * \param   array de Trabajo
+ * \param   limite del array
+ * \return  -1 o -2 si hay algun error, 0 si no
+ *
+ */
 int trabajo_buscarLugarLibre(eTrabajo* arrayTrabajos,int limite)
 {
     int retorno = -1;
@@ -52,6 +70,15 @@ int trabajo_buscarLugarLibre(eTrabajo* arrayTrabajos,int limite)
     return retorno;
 }
 
+/** \brief  Alta de un trabajo, usando datos de los parametros
+ *
+ * \param   array de trabajos
+ * \param   limite del array de trabajos
+ * \param   idMascota
+ * \param   idServicio
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio)
 {
     int retorno = -1;
@@ -75,6 +102,17 @@ int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idS
     return retorno;
 }
 
+/** \brief  Muestra la lista de Trabajos
+ *
+ * \param   array de Trabajos
+ * \param   limite de Trabajos
+ * \param   array de Mascotas
+ * \param   limite del array de Mascotas
+ * \param   array de Servicios
+ * \param   limite del array de servicios
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
 int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas,int limiteMascotas,eServicio* arrayServicios,int limiteServicios){
 
     int retorno = -1;
@@ -114,6 +152,14 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
     return retorno;
 }
 
+/** \brief Verifica si el id pasado por parametro se encuentra en el array
+ *
+ * \param   array de mascotas
+ * \param   limite del array de mascotas
+ * \param   id a buscar
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int verificarMascota(eMascota* arrayMascotas, int limiteMascotas, int idMascotas){
 
     int i;
@@ -131,6 +177,14 @@ int verificarMascota(eMascota* arrayMascotas, int limiteMascotas, int idMascotas
     return retorno;
 }
 
+/** \brief Verifica si el id pasado por parametro se encuentra en el array
+ *
+ * \param   array de Servicios
+ * \param   limite del array de Servicios
+ * \param   id a buscar
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int verificarServicio(eServicio* arrayServicios, int limiteServicios, int idServicios){
 
     int i;
@@ -148,7 +202,18 @@ int verificarServicio(eServicio* arrayServicios, int limiteServicios, int idServ
     return retorno;
 }
 
-//Se dará de alta cada ocurrencia de trabajo pidiéndole al usuario que elija una mascota y un Servicio
+/** \brief  agrega un trabajo  al array. Validando las mascotas y servicios
+ *
+ * \param   array de Mascotas
+ * \param   limite del array de mascotas
+ * \param   array de Tipos
+ * \param   limite del array de tipos
+ * \param   array de Colores
+ * \param   limite del array de Colores
+ * \param   indice de lugar libre en el array
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas ,int limiteMascotas,eServicio* arrayServicios,int limiteServicios, int indice){
 
     int retorno = -1;
@@ -185,6 +250,15 @@ int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMas
     return retorno;
 }
 
+/** \brief  Baja logica de un trabajo al eliminar una mascota
+ *
+ * \param   array de trabajos
+ * \param   limite del array de trabajos
+ * \param   array de Mascotas
+ * \param   limite del array de mascotas
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int trabajo_mascotaEliminada(eTrabajo* arrayTrabajos, int limite, eMascota* arrayMascotas, int limiteMascotas){
 
     int retorno = -1;

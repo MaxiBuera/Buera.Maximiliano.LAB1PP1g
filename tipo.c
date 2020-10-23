@@ -14,6 +14,16 @@
 
 static int nextId();
 
+/** \brief  Para indicar que todas las posiciones estan vacias,
+ *          esta funcion coloca el flag (isEmpty) en True en
+ *          todas las posiciones del array
+ *
+ * \param   array de Tipos
+ * \param   limite del array de Tipos
+ *
+ * \return 0 si la entrada es correcta, sino -1
+ *
+ */
 int tipo_inicializarArrayTipos(eTipo* arrayTipos, int limite){
 
     int retorno = -1;
@@ -31,6 +41,13 @@ int tipo_inicializarArrayTipos(eTipo* arrayTipos, int limite){
     return retorno;
 }
 
+/** \brief  Busca un espacio libre en el array
+ *
+ * \param   array de Tipos
+ * \param   limite del array de Tipos
+ * \return  -1 o -2 si hay algun error, 0 si no
+ *
+ */
 int tipo_buscarLugarLibre(eTipo* arrayTipos,int limite)
 {
     int retorno = -1;
@@ -50,6 +67,14 @@ int tipo_buscarLugarLibre(eTipo* arrayTipos,int limite)
     return retorno;
 }
 
+/** \brief  Alta de un tipo, usando datos de los parametros
+ *
+ * \param   array de Tipos
+ * \param   limite del array de Tipos
+ * \param   descripcion
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int tipo_altaForzada(eTipo* arrayTipos,int limite,char* descripcion)
 {
     int retorno = -1;
@@ -72,6 +97,13 @@ int tipo_altaForzada(eTipo* arrayTipos,int limite,char* descripcion)
     return retorno;
 }
 
+/** \brief  Muestra la lista de Tipos
+ *
+ * \param   array de Tipos
+ * \param   limite de Tipos
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
 int tipo_imprimirTipos(eTipo* arrayTipos,int limite){
 
     int retorno = -1;

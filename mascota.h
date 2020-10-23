@@ -30,4 +30,4 @@ int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eT
 
 int mascota_ordernarPorNombre(eMascota* arrayMascotas,int limite, int orden);
 
-int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, eTipo* arrayTipos, int limiteTipos , int orden);
+int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, int orden);

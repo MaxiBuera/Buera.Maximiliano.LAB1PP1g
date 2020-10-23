@@ -14,6 +14,17 @@
 
 static int nextId();
 
+
+/** \brief  Para indicar que todas las posiciones estan vacias,
+ *          esta funcion coloca el flag (isEmpty) en True en
+ *          todas las posiciones del array
+ *
+ * \param   array de Colores
+ * \param   limite del array de Colores
+ *
+ * \return 0 si la entrada es correcta, sino -1
+ *
+ */
 int color_inicializarArrayColores(eColor* arrayColores, int limite){
 
     int retorno = -1;
@@ -31,6 +42,13 @@ int color_inicializarArrayColores(eColor* arrayColores, int limite){
     return retorno;
 }
 
+/** \brief  Busca un espacio libre en el array
+ *
+ * \param   array de Colores
+ * \param   limite del array de Colores
+ * \return  -1 o -2 si hay algun error, 0 si no
+ *
+ */
 int color_buscarLugarLibre(eColor* arrayColores,int limite)
 {
     int retorno = -1;
@@ -50,6 +68,14 @@ int color_buscarLugarLibre(eColor* arrayColores,int limite)
     return retorno;
 }
 
+/** \brief  Alta de un color, usando datos de los parametros
+ *
+ * \param   array de Colores
+ * \param   limite del array de Colores
+ * \param   nombreColor
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
 int color_altaForzada(eColor* arrayColores,int limite,char* nombreColor)
 {
     int retorno = -1;
@@ -72,6 +98,13 @@ int color_altaForzada(eColor* arrayColores,int limite,char* nombreColor)
     return retorno;
 }
 
+/** \brief  Muestra la lista de Colores
+ *
+ * \param   array de Colores
+ * \param   limite de Colores
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
 int color_imprimirColores(eColor* arrayColores,int limite){
 
     int retorno = -1;

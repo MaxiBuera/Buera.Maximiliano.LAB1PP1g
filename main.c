@@ -8,6 +8,8 @@
 #include "servicio.h"
 #include "mascota.h"
 #include "trabajo.h"
+#include "cliente.h"
+#include "informes.h"
 #define MASCOTAS 20
 #define TIPOS 5
 #define COLORES 5
@@ -59,6 +61,7 @@ int main()
 
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Pepe",5000,1000,2);
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Fatiga",5002,1002,11);
+    mascota_altaForzada(arrayMascotas,MASCOTAS,"Pedro",5004,1000,12);
     mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES);
 
     eTrabajo arrayTrabajos[TRABAJOS];
@@ -116,8 +119,8 @@ int main()
 
                 /*if(flag!=0){
                 */
-                mascota_ordernarPorTipo(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,1);
-                //mascota_ordernarPorNombre(arrayMascotas,MASCOTAS,0);
+                mascota_ordernarPorTipo(arrayMascotas,MASCOTAS,0);
+                mascota_ordernarPorNombre(arrayMascotas,MASCOTAS,0);
                 mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES);
                 /*}
                 else{
