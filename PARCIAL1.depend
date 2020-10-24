@@ -42,7 +42,7 @@
 
 1602885596 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\fecha.c
 
-1603418284 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\servicio.c
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\servicio.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -53,7 +53,7 @@
 	"color.h"
 	"mascota.h"
 
-1603422576 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.c
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -90,9 +90,9 @@
 
 1603064217 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\color.h
 
-1603419903 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.h
+1603503691 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.h
 
-1603422708 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.c
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -103,7 +103,7 @@
 	"servicio.h"
 	"mascota.h"
 
-1603417542 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\color.c
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\color.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -113,7 +113,7 @@
 	"color.h"
 	"mascota.h"
 
-1603417542 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\tipo.c
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\tipo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -212,7 +212,7 @@
 
 1603070575 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\servicio.h
 
-1603421468 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.h
+1603503691 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.h
 
 1603486477 source:c:\users\maximiliano.e.buera\desktop\buera.maximiliano.lab1pp1g\color.c
 	<stdio.h>
@@ -648,6 +648,28 @@
 	"utn.h"
 
 1603501821 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\informes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

@@ -86,7 +86,7 @@ int main()
     printf("\n");
     do{
 
-        getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n\n**** Informes *****\n\n10.Mostrar las mascotas del color seleccionado\n11.Mostrar las mascotas del tipo seleccionado\n12.Mostrar mascota de menor edad\n13.Cantidad de mascotas de cierto color y tipo\n14.Mostrar el o los colores con mas cantidad de mascotas\n15.Salir\n","\nNo valida\n",&menu,1,15,1);
+        getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n\n**** Informes *****\n\n10.Mostrar las mascotas del color seleccionado\n11.Mostrar las mascotas del tipo seleccionado\n12.Mostrar mascota de menor edad\n13.Cantidad de mascotas de cierto color y tipo\n15.Salir\n","\nNo valida\n",&menu,1,15,1);
         switch(menu)
         {
             case 1:
@@ -120,7 +120,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 4:
@@ -133,7 +133,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 5:
@@ -144,7 +144,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 6:
@@ -155,7 +155,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 7:
@@ -166,7 +166,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 8:
@@ -179,7 +179,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 9:
@@ -190,7 +190,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 10:
@@ -200,7 +200,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 11:
@@ -210,7 +210,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 12:
@@ -220,7 +220,7 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
             case 13:
@@ -230,19 +230,19 @@ int main()
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
                 break;
-            case 14:
+            /*case 14:
                 if(flag!=0){
 
                 informes_colorConMasMascotas(arrayMascotas,MASCOTAS,arrayColores,COLORES);
                 }
                 else{
 
-                    printf("\nDebe ingresar un empleado\n");
+                    printf("\nDebe ingresar almenos una mascota\n");
                 }
-                break;
+                break;*/
         }
     }while(menu != 15);
 
