@@ -73,3 +73,149 @@ int informes_mostrarMascotasPorTipoSeleccionado(eMascota* arrayMascotas, int lim
 
     return retorno;
 }
+
+//3.Informar la o las mascotas de menor edad.
+
+int informes_mascotasDeMenorEdad(eMascota* arrayMascotas, int limiteMascotas){
+
+    int retorno = -1;
+    int i=0;
+    int menorEdad;
+    int flag=0;
+
+    if(arrayMascotas != NULL && limiteMascotas > 0){
+
+        retorno = 0;
+        for(i=0;i<limiteMascotas;i++){
+
+            if(arrayMascotas[i].isEmpty == OCUPADO){
+                if(flag==0){
+
+                    menorEdad = arrayMascotas[i].edad;
+                    flag++;
+                }
+
+                if(menorEdad > arrayMascotas[i].edad){
+
+                    menorEdad = arrayMascotas[i].edad;
+                }
+            }
+        }
+
+        printf("\n\n\tMascota(s) de menor edad:\n");
+        for(i=0;i<limiteMascotas;i++){
+            if(arrayMascotas[i].isEmpty == OCUPADO){
+                if(arrayMascotas[i].edad == menorEdad){
+
+                    printf("\n\t%s",arrayMascotas[i].nombre);
+                }
+            }
+        }
+    }
+
+    return retorno;
+}
+
+//4. Elegir un color y un tipo y contar cuantas mascotas hay de ese color y ese tipo.
+
+int informes_mascotasDeColorYTipo(eMascota* arrayMascotas, int limiteMascotas,eColor* arrayColores,int limiteColores, eTipo* arrayTipos, int limiteTipos){
+
+    int retorno=-1;
+    int idColorAux;
+    int idTipoAux;
+    char nombreColor[20];
+    char nombreTipo[20];
+    int i;
+    int contadorColor=0;
+    int contadorTipo=0;
+
+    if(arrayMascotas != NULL && limiteMascotas > 0){
+
+        retorno = 0;
+        color_imprimirColores(arrayColores,limiteColores);
+        if(!getValidInt("\nIngrese ID del color: ","\nError\n",&idColorAux,COLOR_MIN_ID,MAX,1) && (!verificarColor(arrayColores,limiteColores,idColorAux))){
+
+            tipo_imprimirTipos(arrayTipos,limiteTipos);
+            if(!getValidInt("\nIngrese ID del tipo: ","\nError\n",&idTipoAux,TIPO_MIN_ID,MAX,1) && (!verificarTipo(arrayTipos,limiteTipos,idTipoAux))){
+
+                for(i=0;i<limiteMascotas;i++){
+
+                    if(arrayMascotas[i].idColor == idColorAux){
+
+                        contadorColor++;
+                    }
+                    if(arrayMascotas[i].idTipo == idTipoAux){
+
+                        contadorTipo++;
+                    }
+                }
+
+                for(i=0;i<limiteColores;i++){
+
+                    if(arrayColores[i].id == idColorAux);
+                    strcpy(nombreColor,arrayColores[i].nombreColor);
+                }
+
+                for(i=0;i<limiteTipos;i++){
+
+                    if(arrayTipos[i].id == idTipoAux);
+                    strcpy(nombreTipo,arrayTipos[i].descripcion);
+                }
+
+
+                printf("\n\nCantidad de mascotas del color y tipo seleccionado:");
+                printf("\n\n\t%d del color: %s. %d del tipo: %s",contadorColor,nombreColor,contadorTipo,nombreTipo);
+            }
+        }
+    }
+
+    return retorno;
+}
+
+//6. Mostrar el o los colores con mas cantidad de mascotas
+
+int informes_colorConMasMascotas(eMascota* arrayMascotas, int limiteMascotas, eColor* arrayColores,int limiteColores){
+
+    int retorno = -1;
+    int i,j;
+    int idColorAux;
+    int contadorColor;
+    int contadorColorMAX=-1;
+
+    if(arrayColores != NULL && limiteColores > 0){
+
+        for(i=0;i<limiteColores;i++){
+
+            contadorColor=0;
+            for(j=0;j<limiteMascotas;j++){
+
+                if(arrayMascotas[j].idColor== arrayColores[i].id){
+
+                    contadorColor++;
+                }
+            }
+
+            if(contadorColorMAX<contadorColor){
+
+                contadorColorMAX=contadorColor;
+                idColorAux= arrayColores[i].id;
+            }
+        }
+
+        printf("\nColor con mas cantidad de mascotas:\n");
+        for(i=0;i<limiteColores;i++){
+
+            if(arrayColores[i].isEmpty == OCUPADO){
+
+                if(arrayColores[i].id == idColorAux){
+
+                    printf("\n\t%s",arrayColores[idColorAux].nombreColor);
+                }
+            }
+        }
+
+    }
+    return retorno;
+}
+
+

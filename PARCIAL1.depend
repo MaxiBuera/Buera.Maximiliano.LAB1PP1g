@@ -546,3 +546,115 @@
 
 1603494559 c:\users\maximiliano.e.buera\desktop\new folder\buera.maximiliano.lab1pp1g\informes.h
 
+1603494858 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+
+1603494858 c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\utn.h
+
+1603494858 c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\tipo.h
+
+1603494858 c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\color.h
+
+1603494858 c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\servicio.h
+
+1603494858 c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\mascota.h
+
+1603494858 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\color.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1603494858 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\fecha.c
+
+1603501904 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+	"trabajo.h"
+	"informes.h"
+
+1603494858 c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\trabajo.h
+
+1603501732 c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\informes.h
+
+1603494858 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\mascota.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+
+1603494858 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"servicio.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1603494858 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1603494858 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"servicio.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+	"trabajo.h"
+
+1603494858 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1603501821 source:c:\users\maximiliano.e.buera\desktop\ejemplos sap\new folder (2)\buera.maximiliano.lab1pp1g\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+

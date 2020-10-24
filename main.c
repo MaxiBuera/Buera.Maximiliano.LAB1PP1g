@@ -70,6 +70,7 @@ int main()
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Pepe",5000,1000,2,0);
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Fatiga",5002,1002,11,1);
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Pedro",5004,1000,12,2);
+    mascota_altaForzada(arrayMascotas,MASCOTAS,"Roco",5001,1001,2,0);
     //mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES);
 
     eTrabajo arrayTrabajos[TRABAJOS];
@@ -85,7 +86,7 @@ int main()
     printf("\n");
     do{
 
-        getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n\n**** Informes *****\n\n10.Mostrar las mascotas del color seleccionado\n11.Mostrar las mascotas del tipo seleccionado\n12.Salir\n","\nNo valida\n",&menu,1,12,1);
+        getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n\n**** Informes *****\n\n10.Mostrar las mascotas del color seleccionado\n11.Mostrar las mascotas del tipo seleccionado\n12.Mostrar mascota de menor edad\n13.Cantidad de mascotas de cierto color y tipo\n14.Mostrar el o los colores con mas cantidad de mascotas\n15.Salir\n","\nNo valida\n",&menu,1,15,1);
         switch(menu)
         {
             case 1:
@@ -99,119 +100,149 @@ int main()
                 break;
              case 2:
 
-                //if(flag!=0){
+                if(flag!=0){
                     mascota_mostrarMascotaID(arrayMascotas,MASCOTAS);
                     getValidInt("\tID de Mascota a modificar: ","\nID No valido\n",&auxiliarId,0,MASCOTAS,2);
                     mascota_modificarMascota(arrayMascotas,MASCOTAS,auxiliarId,arrayTipos,TIPOS,arrayColores,COLORES);
-               /*}
+               }
                 else{
 
                     printf("\nDebe ingresar almenos una mascota\n");
-                }*/
+                }
                 break;
              case 3:
 
-                 /*if(flag!=0){
-                    employee_orderBySector(arrayEmployees,EMPLOYEES,0);*/
+                 if(flag!=0){
                     mascota_mostrarMascotaID(arrayMascotas,MASCOTAS);
                     getValidInt("\nID de Mascota a eliminar: ","\nID No valido\n",&auxiliarId,0,MASCOTAS,2);
                     mascota_eliminarMascota(arrayMascotas,MASCOTAS,auxiliarId);
                     trabajo_mascotaEliminada(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS);
-                /*}
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
                 break;
             case 4:
 
-                /*if(flag!=0){
-                */
-                mascota_ordernarPorTipo(arrayMascotas,MASCOTAS,0);
-                mascota_ordernarPorNombre(arrayMascotas,MASCOTAS,0);
-                mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES);
-                /*}
+                if(flag!=0){
+
+                    mascota_ordernarPorTipo(arrayMascotas,MASCOTAS,0);
+                    mascota_ordernarPorNombre(arrayMascotas,MASCOTAS,0);
+                    mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES);
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
                 break;
             case 5:
 
-                /*if(flag!=0){
-                */
-                tipo_imprimirTipos(arrayTipos,TIPOS);
-                /*}
+                if(flag!=0){
+
+                    tipo_imprimirTipos(arrayTipos,TIPOS);
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
                 break;
             case 6:
 
-                /*if(flag!=0){
-                */
-                color_imprimirColores(arrayColores,COLORES);
-                /*}
+                if(flag!=0){
+
+                    color_imprimirColores(arrayColores,COLORES);
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
                 break;
             case 7:
 
-                /*if(flag!=0){
-                */
-                servicio_imprimirServicios(arrayServicios,SERVICIOS);
-                /*}
+                if(flag!=0){
+
+                    servicio_imprimirServicios(arrayServicios,SERVICIOS);
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
                 break;
             case 8:
 
-                /*if(flag!=0){
-                */
+                if(flag!=0){
+
                 indice = trabajo_buscarLugarLibre(arrayTrabajos,TRABAJOS);
                 if(indice >= 0)
                     trabajo_agregarTrabajo(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS,indice);
-                /*}
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
                 break;
             case 9:
 
-                /*if(flag!=0){
-                */
-                trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS);
-                /*}
+                if(flag!=0){
+
+                    trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS);
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
                 break;
             case 10:
-                /*if(flag!=0){
-                */
-                informes_mostrarMascotasPorColorSeleccionado(arrayMascotas,MASCOTAS,arrayColores,COLORES);
-                /*}
+                if(flag!=0){
+
+                    informes_mostrarMascotasPorColorSeleccionado(arrayMascotas,MASCOTAS,arrayColores,COLORES);
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
                 break;
             case 11:
-                /*if(flag!=0){
-                */
-                informes_mostrarMascotasPorTipoSeleccionado(arrayMascotas,MASCOTAS,arrayTipos,TIPOS);
-                /*}
+                if(flag!=0){
+
+                    informes_mostrarMascotasPorTipoSeleccionado(arrayMascotas,MASCOTAS,arrayTipos,TIPOS);
+                }
                 else{
 
                     printf("\nDebe ingresar un empleado\n");
-                }*/
+                }
+                break;
+            case 12:
+                if(flag!=0){
+
+                informes_mascotasDeMenorEdad(arrayMascotas,MASCOTAS);
+                }
+                else{
+
+                    printf("\nDebe ingresar un empleado\n");
+                }
+                break;
+            case 13:
+                if(flag!=0){
+
+                informes_mascotasDeColorYTipo(arrayMascotas,MASCOTAS,arrayColores,COLORES,arrayTipos,TIPOS);
+                }
+                else{
+
+                    printf("\nDebe ingresar un empleado\n");
+                }
+                break;
+            case 14:
+                if(flag!=0){
+
+                informes_colorConMasMascotas(arrayMascotas,MASCOTAS,arrayColores,COLORES);
+                }
+                else{
+
+                    printf("\nDebe ingresar un empleado\n");
+                }
+                break;
         }
     }while(menu != 15);
 
