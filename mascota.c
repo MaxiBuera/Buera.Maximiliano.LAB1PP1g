@@ -174,8 +174,10 @@ int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos 
 
                                 mascota_normalizarCadena(cliente);
                                 strcpy(arrayClientes[idCliente].nombre,cliente);
-
                                 arrayClientes[idCliente].sexo = sexoCliente;
+                                arrayClientes[idCliente].isEmpty = OCUPADO;
+                                arrayClientes[idCliente].id = idCliente;
+
                                 arrayMascotas[indice].isEmpty = OCUPADO;
                                 arrayMascotas[indice].id = id;
                                 printf("\n\tMascota Agregada...");

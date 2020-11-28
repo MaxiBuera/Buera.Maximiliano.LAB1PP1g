@@ -14,7 +14,7 @@
 #define COLORES 5
 #define SERVICIOS 3
 #define TRABAJOS 10
-#define CLIENTES 3
+#define CLIENTES 20
 #define OCUPADO 0
 #define LIBRE 0
 
