@@ -15,6 +15,8 @@
 #define SERVICIOS 3
 #define TRABAJOS 10
 #define CLIENTES 3
+#define OCUPADO 0
+#define LIBRE 0
 
 
 int main()
@@ -60,12 +62,20 @@ int main()
     printf("\n\n");*/
     //--------------------
 
-     eCliente arrayClientes[CLIENTES]=
+    eCliente arrayClientes[CLIENTES];
+    cliente_inicializarArrayClientes(arrayClientes,CLIENTES);
+    cliente_altaForzada(arrayClientes,CLIENTES,"Alberto",'m');
+    cliente_altaForzada(arrayClientes,CLIENTES,"Florencia",'f');
+    cliente_altaForzada(arrayClientes,CLIENTES,"Guillermo",'m');
+
+    cliente_imprimirClientes(arrayClientes,CLIENTES);
+
+    /*arrayClientes[CLIENTES]=
     {
-        {0,"Alberto",'m'},
-        {1,"Florencia",'f'},
-        {2,"Guillermo",'m'},
-    };
+        {0,"Alberto",'m',OCUPADO},
+        {1,"Florencia",'f',OCUPADO},
+        {2,"Guillermo",'m',OCUPADO},
+    };*/
 
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Pepe",5000,1000,2,0);
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Fatiga",5002,1002,11,1);
@@ -93,10 +103,11 @@ int main()
 
                 indice = mascota_buscarLugarLibre(arrayMascotas,MASCOTAS);
                 if(indice >= 0){
-                    flagAlta = mascota_agregarMascota(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,indice);
+                    flagAlta = mascota_agregarMascota(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES,indice);
                     if(flagAlta == 0)
                         flag = 1;
                 }
+                cliente_imprimirClientes(arrayClientes,CLIENTES);
                 break;
              case 2:
 
@@ -125,16 +136,16 @@ int main()
                 break;
             case 4:
 
-                if(flag!=0){
+                //if(flag!=0){
 
                     mascota_ordernarPorTipo(arrayMascotas,MASCOTAS,0);
                     mascota_ordernarPorNombre(arrayMascotas,MASCOTAS,0);
                     mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES);
-                }
+                /*}
                 else{
 
                     printf("\nDebe ingresar almenos una mascota\n");
-                }
+                }*/
                 break;
             case 5:
 
@@ -226,7 +237,7 @@ int main()
             case 13:
                 if(flag!=0){
 
-                informes_mascotasDeColorYTipo(arrayMascotas,MASCOTAS,arrayColores,COLORES,arrayTipos,TIPOS);
+                    informes_mascotasDeColorYTipo(arrayMascotas,MASCOTAS,arrayColores,COLORES,arrayTipos,TIPOS);
                 }
                 else{
 

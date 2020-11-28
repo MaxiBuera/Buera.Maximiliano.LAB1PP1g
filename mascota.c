@@ -14,7 +14,7 @@
 #define LIBRE 1
 
 static int nextId();
-
+static int cliente_nextId();
 
 /** \brief  Formatea la cadena pasada por parametro (primer letra mayuscula)
  *
@@ -132,19 +132,23 @@ int verificarColor(eColor* arrayColores, int limiteColores, int idColor){
  * \return  -1 si hay algun error, 0 si no
  *
  */
-int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos ,int limiteTipos,eColor* arrayColores,int limiteColores, int indice){
+int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos ,int limiteTipos,eColor* arrayColores,int limiteColores,eCliente* arrayClientes,int limiteClientes, int indice){
 
     int retorno = -1;
     char nombreAux[20];
     int idTipoAux;
     int idColorAux;
     int edadAux;
+    char cliente[20];
     int id;
+    int idCliente;
+    char sexoCliente;
 
     if(limite > 0 && arrayMascotas != NULL){
 
         retorno = -2;
         id = nextId();
+        idCliente = cliente_nextId();
 
         if(getStringLetras("\nIngrese nombre de la mascota: ",nombreAux)){
 
@@ -156,16 +160,28 @@ int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos 
 
                     if(!getValidInt("\nIngrese edad: ","\nError\n",&edadAux,0,35,2)){
 
-                        mascota_normalizarCadena(nombreAux);
-                        strcpy(arrayMascotas[indice].nombre,nombreAux);
+                        if(getStringLetras("\nIngrese nombre del cliente: ",cliente)){
 
-                        arrayMascotas[indice].idTipo = idTipoAux;
-                        arrayMascotas[indice].idColor = idColorAux;
-                        arrayMascotas[indice].edad = edadAux;
-                        arrayMascotas[indice].isEmpty = OCUPADO;
-                        arrayMascotas[indice].id = id;
-                        printf("\n\tMascota Agregada...");
-                        retorno = 0;
+                            sexoCliente = getChar("\nIngrese su sexo [m - masculino | f - femenino]: ");
+                            if(sexoCliente == 'm' || sexoCliente == 'M' || sexoCliente == 'f' || sexoCliente == 'F'){
+
+                                mascota_normalizarCadena(nombreAux);
+                                strcpy(arrayMascotas[indice].nombre,nombreAux);
+
+                                arrayMascotas[indice].idTipo = idTipoAux;
+                                arrayMascotas[indice].idColor = idColorAux;
+                                arrayMascotas[indice].edad = edadAux;
+
+                                mascota_normalizarCadena(cliente);
+                                strcpy(arrayClientes[idCliente].nombre,cliente);
+
+                                arrayClientes[idCliente].sexo = sexoCliente;
+                                arrayMascotas[indice].isEmpty = OCUPADO;
+                                arrayMascotas[indice].id = id;
+                                printf("\n\tMascota Agregada...");
+                                retorno = 0;
+                            }
+                        }
                     }
                 }
             }
@@ -309,7 +325,7 @@ void mascota_menuModificacion(eMascota* arrayMascotas, int indice, eTipo* arrayT
                 }
                 break;
         }
-    }while(opc != 5);
+    }while(opc != 3);
 
 }
 int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores){
@@ -541,6 +557,96 @@ int mascota_ordernarPorTipo(eMascota* arrayMascotas,int limite, int orden)
 }
 
 static int nextId()
+{
+    static int lastId = -1;
+    lastId++;
+    return lastId;
+}
+
+int cliente_inicializarArrayClientes(eCliente* arrayClientes, int limite){
+
+    int retorno = -1;
+    int i;
+    if(limite > 0 && arrayClientes != NULL)
+    {
+        retorno = 0;
+        for(i=0;i<limite;i++)
+        {
+            arrayClientes[i].id = -1;
+            strcpy(arrayClientes[i].nombre,"");
+            arrayClientes[i].isEmpty = LIBRE;
+        }
+    }
+    return retorno;
+}
+
+int cliente_buscarLugarLibre(eCliente* arrayCliente,int limite)
+{
+    int retorno = -1;
+    int i;
+    if(limite > 0 && arrayCliente != NULL)
+    {
+        retorno = -2;
+        for(i=0;i<limite;i++)
+        {
+            if(arrayCliente[i].isEmpty == LIBRE)
+            {
+                retorno = i;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+int cliente_altaForzada(eCliente* arrayClientes,int limite,char* nombre,char sexo)
+{
+    int retorno = -1;
+    int i;
+
+    if(limite > 0 && arrayClientes != NULL)
+    {
+        i = cliente_buscarLugarLibre(arrayClientes,limite);
+        if(i >= 0)
+        {
+            retorno = 0;
+            strcpy(arrayClientes[i].nombre,nombre);
+            arrayClientes[i].sexo = sexo;
+            //------------------------------
+            //------------------------------
+            arrayClientes[i].id = cliente_nextId();
+            arrayClientes[i].isEmpty = OCUPADO;
+        }
+        retorno = 0;
+    }
+    return retorno;
+}
+
+int cliente_imprimirClientes(eCliente* arrayClientes,int limite)
+{
+    int retorno = -1;
+
+    if(limite > 0 && arrayClientes != NULL)
+    {
+        int i;
+        retorno = 0;
+        printf("\n\t**** Clientes ****\n");
+        printf("\n\tID Cliente\tNombre\t\tSexo");
+        printf("\n\t-----------------------------------------------");
+        for(i=0;i<limite;i++)
+        {
+
+            if(arrayClientes[i].isEmpty != LIBRE){
+
+                printf("\n%12d%15s\t\t%c",arrayClientes[i].id,arrayClientes[i].nombre,arrayClientes[i].sexo);
+            }
+        }
+    }
+
+    return retorno;
+}
+
+static int cliente_nextId()
 {
     static int lastId = -1;
     lastId++;
