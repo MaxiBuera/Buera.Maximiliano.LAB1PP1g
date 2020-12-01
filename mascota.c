@@ -171,6 +171,7 @@ int mascota_agregarMascota(eMascota* arrayMascotas,int limite,eTipo* arrayTipos 
                                 arrayMascotas[indice].idTipo = idTipoAux;
                                 arrayMascotas[indice].idColor = idColorAux;
                                 arrayMascotas[indice].edad = edadAux;
+                                arrayMascotas[indice].idCliente = idCliente;
 
                                 mascota_normalizarCadena(cliente);
                                 strcpy(arrayClientes[idCliente].nombre,cliente);
@@ -428,11 +429,10 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipo
 
                     if(arrayMascotas[i].idColor == arrayColores[j].id){
                         strcpy(nombreColor,arrayColores[j].nombreColor);
-                        continue;
+
                     }
                 }
                 for(j=0;j<limiteClientes;j++){
-
                     if(arrayMascotas[i].idCliente == arrayClientes[j].id){
                         strcpy(nombreCliente,arrayClientes[j].nombre);
                         continue;
@@ -575,6 +575,7 @@ int cliente_inicializarArrayClientes(eCliente* arrayClientes, int limite){
         for(i=0;i<limite;i++)
         {
             arrayClientes[i].id = -1;
+            arrayClientes[i].sexo = ' ';
             strcpy(arrayClientes[i].nombre,"");
             arrayClientes[i].isEmpty = LIBRE;
         }
@@ -650,7 +651,7 @@ int cliente_imprimirClientes(eCliente* arrayClientes,int limite)
 
 static int cliente_nextId()
 {
-    static int lastId = -1;
-    lastId++;
-    return lastId;
+    static int lastIdCliente = -1;
+    lastIdCliente++;
+    return lastIdCliente;
 }

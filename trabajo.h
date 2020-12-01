@@ -19,7 +19,7 @@ typedef struct{
 
 int trabajo_inicializarArrayTrabajos(eTrabajo* arrayTrabajos, int limite);
 
-int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio);
+int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio,int dia, int mes, int anio);
 
 int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas,int limiteMascotas,eServicio* arrayServicios,int limiteServicios);
 

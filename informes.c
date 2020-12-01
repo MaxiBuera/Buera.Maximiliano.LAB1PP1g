@@ -152,16 +152,19 @@ int informes_mascotasDeColorYTipo(eMascota* arrayMascotas, int limiteMascotas,eC
 
                 for(i=0;i<limiteColores;i++){
 
-                    if(arrayColores[i].id == idColorAux);
-                    strcpy(nombreColor,arrayColores[i].nombreColor);
+                    if(arrayColores[i].id == idColorAux){
+
+                        strcpy(nombreColor,arrayColores[i].nombreColor);
+                    }
                 }
 
                 for(i=0;i<limiteTipos;i++){
 
-                    if(arrayTipos[i].id == idTipoAux);
-                    strcpy(nombreTipo,arrayTipos[i].descripcion);
-                }
+                    if(arrayTipos[i].id == idTipoAux){
 
+                        strcpy(nombreTipo,arrayTipos[i].descripcion);
+                    }
+                }
 
                 printf("\n\nCantidad de mascotas del color y tipo seleccionado:");
                 printf("\n\n\t%d del color: %s. %d del tipo: %s",contadorColor,nombreColor,contadorTipo,nombreTipo);
@@ -173,49 +176,66 @@ int informes_mascotasDeColorYTipo(eMascota* arrayMascotas, int limiteMascotas,eC
 }
 
 //6. Mostrar el o los colores con mas cantidad de mascotas
+void resultadoCantidadMascotasSegunColor(eMascota* arrayMascotas, int limiteMascotas, eColor* arrayColores,int limiteColores, int contadorColorMAX){
+
+    int i,j;
+    int contador=0;
+
+    printf("\nColor(es) con mas cantidad de mascotas: ");
+
+    for(i=0;i<limiteColores;i++){
+
+        for(j=0;j<limiteMascotas;j++){
+
+            if(arrayColores[i].id == arrayMascotas[j].idColor){
+
+                contador++;
+            }
+        }
+        if(contador == contadorColorMAX){
+
+            printf("%s ",arrayColores[i].nombreColor);
+        }
+
+        contador = 0;
+    }
+
+    printf("- %d mascota(s)",contadorColorMAX);
+}
 
 int informes_colorConMasMascotas(eMascota* arrayMascotas, int limiteMascotas, eColor* arrayColores,int limiteColores){
 
     int retorno = -1;
     int i,j;
-    int idColorAux;
-    int contadorColor;
+    int contadorColor=0;
     int contadorColorMAX=-1;
 
     if(arrayColores != NULL && limiteColores > 0){
 
+        retorno = 0;
+
         for(i=0;i<limiteColores;i++){
 
-            contadorColor=0;
             for(j=0;j<limiteMascotas;j++){
 
-                if(arrayMascotas[j].idColor== arrayColores[i].id){
+                if(arrayColores[i].id == arrayMascotas[j].idColor){
 
                     contadorColor++;
                 }
             }
+            if(contadorColor > contadorColorMAX){
 
-            if(contadorColorMAX<contadorColor){
-
-                contadorColorMAX=contadorColor;
-                idColorAux= arrayColores[i].id;
+                contadorColorMAX = contadorColor;
             }
+            contadorColor = 0;
         }
 
-        printf("\nColor con mas cantidad de mascotas:\n");
-        for(i=0;i<limiteColores;i++){
-
-            if(arrayColores[i].isEmpty == OCUPADO){
-
-                if(arrayColores[i].id == idColorAux){
-
-                    printf("\n\t%s",arrayColores[idColorAux].nombreColor);
-                }
-            }
-        }
-
+        resultadoCantidadMascotasSegunColor(arrayMascotas,limiteMascotas,arrayColores,limiteColores,contadorColorMAX);
     }
+
+
     return retorno;
 }
+
 
 
