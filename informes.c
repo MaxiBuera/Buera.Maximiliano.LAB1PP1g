@@ -7,6 +7,7 @@
 #include "color.h"
 #include "servicio.h"
 #include "mascota.h"
+#include "trabajo.h"
 #define TIPO_MIN_ID 1000
 #define MAX 10000
 #define COLOR_MIN_ID 5000
@@ -15,7 +16,6 @@
 
 
 //1- Mostrar las mascotas del color seleccionado por el usuario.
-
 int informes_mostrarMascotasPorColorSeleccionado(eMascota* arrayMascotas, int limiteMascotas, eColor* arrayColores, int limiteColores){
 
     int retorno = -1;
@@ -44,9 +44,7 @@ int informes_mostrarMascotasPorColorSeleccionado(eMascota* arrayMascotas, int li
 }
 
 
-
 //2- Mostrar mascotas de un tipo seleccionado.
-
 int informes_mostrarMascotasPorTipoSeleccionado(eMascota* arrayMascotas, int limiteMascotas, eTipo* arrayTipos, int limiteTipos){
 
     int retorno = -1;
@@ -75,7 +73,6 @@ int informes_mostrarMascotasPorTipoSeleccionado(eMascota* arrayMascotas, int lim
 }
 
 //3.Informar la o las mascotas de menor edad.
-
 int informes_mascotasDeMenorEdad(eMascota* arrayMascotas, int limiteMascotas){
 
     int retorno = -1;
@@ -116,8 +113,43 @@ int informes_mascotasDeMenorEdad(eMascota* arrayMascotas, int limiteMascotas){
     return retorno;
 }
 
-//4. Elegir un color y un tipo y contar cuantas mascotas hay de ese color y ese tipo.
+//4. Listar de las mascotas separadas por tipo
+int informes_listarMascotasSeparadasPorTipo(eMascota* arrayMascotas, int limiteMascotas, eTipo* arrayTipos,int limiteTipos){
 
+    int retorno = -1;
+    int i,j;
+    int flag;
+
+    if(arrayMascotas != NULL && arrayTipos != NULL){
+
+        retorno = 0;
+
+        for(i=0;i<limiteTipos;i++){
+
+            flag = 0;
+            printf("\n\n\tTipo de Mascota: %s",arrayTipos[i].descripcion);
+            printf("\n\t------------------------------");
+            for(j=0;j<limiteMascotas;j++){
+
+                if(arrayTipos[i].id == arrayMascotas[j].idTipo){
+
+                    printf("\n\t%s",arrayMascotas[j].nombre);
+                    flag = 1;
+                }
+            }
+            if(flag == 0){
+
+                printf("\n\tSin mascotas para este tipo");
+            }
+        }
+        printf("\n");
+    }
+
+    return retorno;
+}
+
+
+//5. Elegir un color y un tipo y contar cuantas mascotas hay de ese color y ese tipo.
 int informes_mascotasDeColorYTipo(eMascota* arrayMascotas, int limiteMascotas,eColor* arrayColores,int limiteColores, eTipo* arrayTipos, int limiteTipos){
 
     int retorno=-1;
@@ -237,5 +269,43 @@ int informes_colorConMasMascotas(eMascota* arrayMascotas, int limiteMascotas, eC
     return retorno;
 }
 
+//7. Pedir una mascota y mostrar todos los trabajos que se le hicieron a la misma.
+int informes_trabajosAMascotaElegida(eMascota* arrayMascotas, int limiteMascotas,eTrabajo* arrayTrabajos, int limiteTrabajos, eServicio* arrayServicios, int limiteServicios, int idMascotaAux){
 
+    int retorno = -1;
+    int i,j;
+    int flag=0;
+
+    if(arrayMascotas != NULL && limiteMascotas > 0){
+
+        if(mascota_buscarMascotaPorId(arrayMascotas,limiteMascotas,idMascotaAux) >= 0){
+
+            printf("\n\n\t*** Mascotas del tipo seleccionado ***");
+            printf("\n\t--------------------------------");
+            retorno=0;
+            for(i=0;i<limiteTrabajos;i++){
+
+                if(idMascotaAux == arrayTrabajos[i].idMascota){
+
+                    for(j=0;j<limiteServicios;j++){
+
+                        if(arrayTrabajos[i].idServicio == arrayServicios[j].id){
+
+                             printf("\n\t%s",arrayServicios[j].descripcion);
+                             flag = 1;
+                        }
+                    }
+                }
+            }
+            if(flag == 0){
+
+                printf("\n\tSin Trabajos para esta mascota");
+            }
+        }
+
+        printf("\n");
+    }
+
+    return retorno;
+}
 

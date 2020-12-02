@@ -97,7 +97,7 @@ int verificarTipo(eTipo* arrayTipos, int limiteTipos, int idTipo){
 
 /** \brief Verifica si el id pasado por parametro se encuentra en el array
  *
- * \param   array de tipos
+ * \param   array de colores
  * \param   limite del array de colores
  * \param   id a buscar
  * \return  -1 si hay algun error, 0 si no

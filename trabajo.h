@@ -28,3 +28,7 @@ int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMas
 int trabajo_buscarLugarLibre(eTrabajo* arrayTrabajos,int limite);
 
 int trabajo_mascotaEliminada(eTrabajo* arrayTrabajos, int limite, eMascota* arrayMascotas, int limiteMascotas);
+
+int verificarMascota(eMascota* arrayMascotas, int limiteMascotas, int idMascotas);
+
+int verificarServicio(eServicio* arrayServicios, int limiteServicios, int idServicios);

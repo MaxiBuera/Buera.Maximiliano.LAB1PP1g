@@ -147,7 +147,7 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
                     }
                 }
 
-           		printf("\n%12d%15s\t\t%s%12d-%d-%d",arrayTrabajos[i].id,nombreMascota,nombreServicio,arrayTrabajos[i].fecha.dia,arrayTrabajos[i].fecha.mes,arrayTrabajos[i].fecha.anio);
+           		printf("\n%12d%18s\t\t%s%12d-%d-%d",arrayTrabajos[i].id,nombreMascota,nombreServicio,arrayTrabajos[i].fecha.dia,arrayTrabajos[i].fecha.mes,arrayTrabajos[i].fecha.anio);
            	}
         }
         printf("\n");

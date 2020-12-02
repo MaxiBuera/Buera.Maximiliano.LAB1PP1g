@@ -31,6 +31,8 @@ int mascota_imprimirMascotas(eMascota* arrayMascotas,int limite,eTipo* arrayTipo
 
 int mascota_mostrarMascotaID(eMascota* arrayMascotas,int limite);
 
+int mascota_buscarMascotaPorId(eMascota* arrayMascotas,int limite, int id);
+
 int mascota_eliminarMascota(eMascota* arrayMascotas, int limite,int indice);
 
 int mascota_modificarMascota(eMascota* arrayMascotas, int limite, int indice, eTipo* arrayTipos ,int limiteTipos,eColor* arrayColor,int limiteColores);
