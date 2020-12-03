@@ -79,7 +79,7 @@ int trabajo_buscarLugarLibre(eTrabajo* arrayTrabajos,int limite)
  * \return  -1 si hay algun error, 0 si no
  *
  */
-int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio)
+int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio,int dia, int mes, int anio)
 {
     int retorno = -1;
     int i;
@@ -92,6 +92,9 @@ int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idS
             retorno = 0;
             arrayTrabajos[i].idMascota = idMascota;
             arrayTrabajos[i].idServicio = idServicio;
+            arrayTrabajos[i].fecha.dia = dia;
+            arrayTrabajos[i].fecha.mes  = mes;
+            arrayTrabajos[i].fecha.anio  = anio;
             //------------------------------
             //------------------------------
             arrayTrabajos[i].id = nextId();
@@ -123,8 +126,8 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
     {
         retorno = 0;
         printf("\n\t**** Trabajos ****\n");
-        printf("\n\tID Trabajo\tMascota\t\tServicio");
-        printf("\n\t-----------------------------------------------");
+        printf("\n\tID Trabajo\tMascota\t\tServicio\tFecha de Trabajo");
+        printf("\n\t----------------------------------------------------------------");
         for(i=0;i<limite;i++)
         {
         	if(!arrayTrabajos[i].isEmpty)
@@ -144,7 +147,7 @@ int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayM
                     }
                 }
 
-           		printf("\n%12d%15s\t\t%s",arrayTrabajos[i].id,nombreMascota,nombreServicio);
+           		printf("\n%12d%18s\t\t%s%12d/%d/%d",arrayTrabajos[i].id,nombreMascota,nombreServicio,arrayTrabajos[i].fecha.dia,arrayTrabajos[i].fecha.mes,arrayTrabajos[i].fecha.anio);
            	}
         }
         printf("\n");
@@ -202,6 +205,44 @@ int verificarServicio(eServicio* arrayServicios, int limiteServicios, int idServ
     return retorno;
 }
 
+int trabajo_pedirFecha(eTrabajo* arrayTrabajos,int limiteTrabajos,int* diaAux, int* mesAux, int* anioAux){
+
+    int retorno = -1;
+
+    if(arrayTrabajos != NULL && limiteTrabajos > 0){
+
+        printf("\nIngrese Fecha de Trabajo");
+        if(!getValidInt("\nIngrese anio: ","\nMes No Valido\n",anioAux,2000,2099,1)){
+
+            if(!getValidInt("\nIngrese mes: ","\nMes No Valido\n",mesAux,1,12,1)){
+
+                if(*mesAux == 1 || *mesAux == 3 || *mesAux == 5 || *mesAux == 7 || *mesAux == 8 || *mesAux == 10 || *mesAux == 12){
+
+                    if(!getValidInt("\nIngrese dia: ","\nDia No Valido\n",diaAux,1,31,1)){
+
+                        retorno = 0;
+                    }
+                }
+                else if(*mesAux == 4 || *mesAux == 6 || *mesAux == 9 || *mesAux == 11){
+
+                    if(!getValidInt("\nIngrese dia: ","\nDia No Valido\n",diaAux,1,30,1)){
+
+                        retorno = 0;
+                    }
+                }
+                else{
+                    if(!getValidInt("\nIngrese dia: ","\nDia No Valido\n",diaAux,1,28,1)){
+
+                        retorno = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    return retorno;
+}
+
 /** \brief  agrega un trabajo  al array. Validando las mascotas y servicios
  *
  * \param   array de Mascotas
@@ -219,6 +260,7 @@ int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMas
     int retorno = -1;
     int idMascotaAux;
     int idServicioAux;
+    int diaAux,mesAux,anioAux;
     int id;
 
     if(limite > 0 && arrayTrabajos != NULL){
@@ -232,19 +274,20 @@ int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMas
             servicio_mostrarServicioID(arrayServicios,limiteServicios);
             if(!getValidInt("\nIngrese ID del Servicio: ","\nError\n",&idServicioAux,SERVICIOS,SERVICIOS+3,1) && (!verificarServicio(arrayServicios,limiteServicios,idServicioAux))){
 
-                arrayTrabajos[indice].idMascota = idMascotaAux;
-                arrayTrabajos[indice].idServicio = idServicioAux;
-                arrayTrabajos[indice].isEmpty = OCUPADO;
-                arrayTrabajos[indice].id = id;
-                printf("\n\tTrabajo Agregado...");
-                retorno = 0;
+                if(!trabajo_pedirFecha(arrayTrabajos,limite,&diaAux,&mesAux,&anioAux)){
+
+                    arrayTrabajos[indice].fecha.dia = diaAux;
+                    arrayTrabajos[indice].fecha.mes = mesAux;
+                    arrayTrabajos[indice].fecha.anio = anioAux;
+                    arrayTrabajos[indice].idMascota = idMascotaAux;
+                    arrayTrabajos[indice].idServicio = idServicioAux;
+                    arrayTrabajos[indice].isEmpty = OCUPADO;
+                    arrayTrabajos[indice].id = id;
+                    printf("\nTrabajo Agregado ...\n\n");
+                    retorno = 0;
+                }
             }
         }
-    }
-
-    if(retorno != 0){
-
-        printf("\nID no valido\n");
     }
 
     return retorno;

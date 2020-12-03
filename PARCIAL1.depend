@@ -42,7 +42,7 @@
 
 1602885596 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\fecha.c
 
-1603418284 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\servicio.c
+1606874966 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\servicio.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -53,7 +53,7 @@
 	"color.h"
 	"mascota.h"
 
-1603422576 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.c
+1606965105 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -74,7 +74,7 @@
 
 1601648894 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\utn.h
 
-1603422605 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\main.c
+1607031611 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -85,14 +85,15 @@
 	"servicio.h"
 	"mascota.h"
 	"trabajo.h"
+	"informes.h"
 
 1603064217 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\tipo.h
 
 1603064217 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\color.h
 
-1603419903 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.h
+1606878317 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.h
 
-1603422708 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.c
+1606966166 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -103,7 +104,7 @@
 	"servicio.h"
 	"mascota.h"
 
-1603417542 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\color.c
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\color.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -113,7 +114,7 @@
 	"color.h"
 	"mascota.h"
 
-1603417542 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\tipo.c
+1603503691 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\tipo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -212,7 +213,7 @@
 
 1603070575 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\servicio.h
 
-1603421468 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.h
+1606965105 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.h
 
 1603486477 source:c:\users\maximiliano.e.buera\desktop\buera.maximiliano.lab1pp1g\color.c
 	<stdio.h>
@@ -657,4 +658,131 @@
 	"color.h"
 	"servicio.h"
 	"mascota.h"
+
+1605491153 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+
+1607020606 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+	"trabajo.h"
+
+1606965064 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\informes.h
+
+1603503691 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\color.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1601648894 c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\utn.h
+
+1603064217 c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\tipo.h
+
+1603064217 c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\color.h
+
+1606878317 c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\mascota.h
+
+1602885596 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\fecha.c
+
+1607020606 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+	"trabajo.h"
+
+1603070575 c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\servicio.h
+
+1606965105 c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\trabajo.h
+
+1607031611 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+	"trabajo.h"
+	"informes.h"
+
+1606965064 c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\informes.h
+
+1606966166 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\mascota.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"servicio.h"
+	"mascota.h"
+
+1606874966 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"servicio.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1603503691 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+
+1606965105 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"servicio.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+	"trabajo.h"
+
+1601941424 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.lab1pp1g\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
 

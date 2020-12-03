@@ -19,7 +19,7 @@ typedef struct{
 
 int trabajo_inicializarArrayTrabajos(eTrabajo* arrayTrabajos, int limite);
 
-int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio);
+int trabajo_altaForzada(eTrabajo* arrayTrabajos,int limite,int idMascota,int idServicio,int dia, int mes, int anio);
 
 int trabajo_imprimirTrabajos(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMascotas,int limiteMascotas,eServicio* arrayServicios,int limiteServicios);
 
@@ -28,3 +28,9 @@ int trabajo_agregarTrabajo(eTrabajo* arrayTrabajos,int limite,eMascota* arrayMas
 int trabajo_buscarLugarLibre(eTrabajo* arrayTrabajos,int limite);
 
 int trabajo_mascotaEliminada(eTrabajo* arrayTrabajos, int limite, eMascota* arrayMascotas, int limiteMascotas);
+
+int verificarMascota(eMascota* arrayMascotas, int limiteMascotas, int idMascotas);
+
+int verificarServicio(eServicio* arrayServicios, int limiteServicios, int idServicios);
+
+int trabajo_pedirFecha(eTrabajo* arrayTrabajos,int limiteTrabajos,int* diaAux, int* mesAux, int* anioAux);
