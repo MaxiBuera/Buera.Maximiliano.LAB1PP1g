@@ -5,4 +5,6 @@ int informes_listarMascotasSeparadasPorTipo(eMascota* arrayMascotas, int limiteM
 int informes_mascotasDeColorYTipo(eMascota* arrayMascotas, int limiteMascotas,eColor* arrayColores,int limiteColores, eTipo* arrayTipos, int limiteTipos);
 int informes_colorConMasMascotas(eMascota* arrayMascotas, int limiteMascotas, eColor* arrayColores,int limiteColores);
 int informes_trabajosAMascotaElegida(eMascota* arrayMascotas, int limiteMascotas, eTrabajo* arrayTrabajos, int limiteTrabajos, eServicio* arrayServicios, int limiteServicios,int idMascotaAux);
-
+int informes_importesServiciosAMascotas(eMascota* arrayMascotas, int limiteMascotas,eTrabajo* arrayTrabajos, int limiteTrabajos, eServicio* arrayServicios, int limiteServicios, int idMascotaAux);
+int informes_mascotasQueRecibieronServicioSeleccionado(eMascota* arrayMascotas, int limiteMascotas,eTrabajo* arrayTrabajos, int limiteTrabajos, eServicio* arrayServicios, int limiteServicios);
+int informes_serviciosRealizadosEnUnaFecha(eTrabajo* arrayTrabajos, int limiteTrabajos, eServicio* arrayServicios, int limiteServicios);

@@ -59,6 +59,10 @@ int main()
     color_imprimirColores(arrayColores,COLORES);
     printf("\n\n");
     servicio_imprimirServicios(arrayServicios,SERVICIOS);
+    printf("\n\n");
+    mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES);
+    printf("\n\n");
+    trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS);
     printf("\n\n");*/
     //--------------------
 
@@ -74,22 +78,20 @@ int main()
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Fatiga",5002,1002,11,1);
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Pedro",5004,1000,12,2);
     mascota_altaForzada(arrayMascotas,MASCOTAS,"Roco",5001,1001,2,0);
-    //mascota_imprimirMascotas(arrayMascotas,MASCOTAS,arrayTipos,TIPOS,arrayColores,COLORES,arrayClientes,CLIENTES);
 
     eTrabajo arrayTrabajos[TRABAJOS];
     trabajo_inicializarArrayTrabajos(arrayTrabajos,TRABAJOS);
     trabajo_altaForzada(arrayTrabajos,TRABAJOS,0,20000,1,1,2020);
     trabajo_altaForzada(arrayTrabajos,TRABAJOS,1,20002,3,2,2020);
     trabajo_altaForzada(arrayTrabajos,TRABAJOS,1,20000,3,2,2020);
-    //trabajo_imprimirTrabajos(arrayTrabajos,TRABAJOS,arrayMascotas,MASCOTAS,arrayServicios,SERVICIOS);
-    //printf("\n\n");
+
 
     printf("\n\n\n");
     printf("\t***** Veterinaria *****");
     printf("\n");
     do{
 
-        getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n\n**** Informes *****\n\n10.Mostrar las mascotas del color seleccionado\n11.Mostrar las mascotas del tipo seleccionado\n12.Mostrar mascota de menor edad\n13.Listar de las mascotas separadas por tipo\n14.Elegir un color y un tipo y contar cuantas mascotas hay de ese color y ese tipo\n15.Mostrar el o los colores con mas cantidad de mascotas\n16.Pedir una mascota y mostrar todos los trabajos que se le hicieron a la misma\n20.Salir\n","\nNo valida\n",&menu,1,20,1);
+        getValidInt("\n\n1.Alta Mascota\n2.Modificar Mascota\n3.Baja Mascota\n4.Listar Mascotas\n5.Listar Tipos\n6.Listar Colores\n7.Listar Servicios\n8.Alta Trabajo\n9.Listar Trabajo\n10.Listar Clientes\n\n**** Informes *****\n\n11.Mostrar las mascotas del color seleccionado\n12.Mostrar las mascotas del tipo seleccionado\n13.Mostrar mascota de menor edad\n14.Listar de las mascotas separadas por tipo\n15.Elegir un color y un tipo y contar cuantas mascotas hay de ese color y ese tipo\n16.Mostrar el o los colores con mas cantidad de mascotas\n17.Pedir una mascota y mostrar todos los trabajos que se le hicieron a la misma\n18.Pedir una mascota e informar la suma de los importes de los servicios que se le hicieron a la misma\n19.Pedir un servicio y mostrar las mascotas a las que se les realizo ese servicio y la fecha\n20.Pedir una fecha y mostrar todos los servicios realizados en la misma\n21.Salir\n","\nNo valida\n",&menu,1,21,1);
         switch(menu)
         {
             case 1:
@@ -200,6 +202,15 @@ int main()
             case 10:
                 //if(flag!=0){
                     system("cls");
+                    cliente_imprimirClientes(arrayClientes,CLIENTES);/*}
+                else{
+
+                    printf("\nDebe ingresar almenos una mascota\n");
+                }*/
+                break;
+            case 11:
+                //if(flag!=0){
+                    system("cls");
                     informes_mostrarMascotasPorColorSeleccionado(arrayMascotas,MASCOTAS,arrayColores,COLORES);
                 /* }
                 else{
@@ -207,7 +218,7 @@ int main()
                     printf("\nDebe ingresar almenos una mascota\n");
                 }*/
                 break;
-            case 11:
+            case 12:
                 //if(flag!=0){
                     system("cls");
                     informes_mostrarMascotasPorTipoSeleccionado(arrayMascotas,MASCOTAS,arrayTipos,TIPOS);
@@ -217,7 +228,7 @@ int main()
                     printf("\nDebe ingresar almenos una mascota\n");
                 }*/
                 break;
-            case 12:
+            case 13:
                 //if(flag!=0){
                     system("cls");
                     informes_mascotasDeMenorEdad(arrayMascotas,MASCOTAS);
@@ -227,7 +238,7 @@ int main()
                     printf("\nDebe ingresar almenos una mascota\n");
                 }*/
                 break;
-            case 13:
+            case 14:
                 //if(flag!=0){
                     system("cls");
                     informes_listarMascotasSeparadasPorTipo(arrayMascotas,MASCOTAS,arrayTipos,TIPOS);
@@ -237,7 +248,7 @@ int main()
                     printf("\nDebe ingresar almenos una mascota\n");
                 }*/
                 break;
-            case 14:
+            case 15:
                 //if(flag!=0){
                 system("cls");
                 informes_mascotasDeColorYTipo(arrayMascotas,MASCOTAS,arrayColores,COLORES,arrayTipos,TIPOS);
@@ -247,7 +258,7 @@ int main()
                     printf("\nDebe ingresar almenos una mascota\n");
                 }*/
                 break;
-            case 15:
+            case 16:
                 //if(flag!=0){
                 system("cls");
                 informes_colorConMasMascotas(arrayMascotas,MASCOTAS,arrayColores,COLORES);
@@ -257,7 +268,7 @@ int main()
                     printf("\nDebe ingresar almenos una mascota\n");
                 }*/
                 break;
-            case 16:
+            case 17:
                 //if(flag!=0){
                 system("cls");
                 mascota_mostrarMascotaID(arrayMascotas,MASCOTAS);
@@ -269,8 +280,40 @@ int main()
                     printf("\nDebe ingresar almenos una mascota\n");
                 }*/
                 break;
+            case 18:
+                //if(flag!=0){
+                system("cls");
+                mascota_mostrarMascotaID(arrayMascotas,MASCOTAS);
+                getValidInt("\tID de Mascota a modificar: ","\nID No valido\n",&auxiliarId,0,MASCOTAS,2);
+                informes_importesServiciosAMascotas(arrayMascotas,MASCOTAS,arrayTrabajos,TRABAJOS,arrayServicios,SERVICIOS,auxiliarId);
+                /*}
+                else{
+
+                    printf("\nDebe ingresar almenos una mascota\n");
+                }*/
+                break;
+            case 19:
+                //if(flag!=0){
+                system("cls");
+                informes_mascotasQueRecibieronServicioSeleccionado(arrayMascotas,MASCOTAS,arrayTrabajos,TRABAJOS,arrayServicios,SERVICIOS);
+                /*}
+                else{
+
+                    printf("\nDebe ingresar almenos una mascota\n");
+                }*/
+                break;
+            case 20:
+                //if(flag!=0){
+                system("cls");
+                informes_serviciosRealizadosEnUnaFecha(arrayTrabajos,TRABAJOS,arrayServicios,SERVICIOS);
+                /*}
+                else{
+
+                    printf("\nDebe ingresar almenos una mascota\n");
+                }*/
+                break;
         }
-    }while(menu != 20);
+    }while(menu != 21);
 
 
     return 0;

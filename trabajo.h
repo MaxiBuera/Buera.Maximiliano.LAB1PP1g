@@ -32,3 +32,5 @@ int trabajo_mascotaEliminada(eTrabajo* arrayTrabajos, int limite, eMascota* arra
 int verificarMascota(eMascota* arrayMascotas, int limiteMascotas, int idMascotas);
 
 int verificarServicio(eServicio* arrayServicios, int limiteServicios, int idServicios);
+
+int trabajo_pedirFecha(eTrabajo* arrayTrabajos,int limiteTrabajos,int* diaAux, int* mesAux, int* anioAux);

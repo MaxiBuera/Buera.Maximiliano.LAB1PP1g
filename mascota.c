@@ -644,6 +644,7 @@ int cliente_imprimirClientes(eCliente* arrayClientes,int limite)
                 printf("\n%12d%15s\t\t%c",arrayClientes[i].id,arrayClientes[i].nombre,arrayClientes[i].sexo);
             }
         }
+        printf("\n");
     }
 
     return retorno;

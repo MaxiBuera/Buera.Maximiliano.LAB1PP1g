@@ -53,7 +53,7 @@
 	"color.h"
 	"mascota.h"
 
-1606874993 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.c
+1606965105 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -74,7 +74,7 @@
 
 1601648894 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\utn.h
 
-1606878316 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\main.c
+1606966073 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -93,7 +93,7 @@
 
 1606878317 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.h
 
-1606877262 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.c
+1606939740 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\mascota.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -213,7 +213,7 @@
 
 1603070575 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\servicio.h
 
-1606877375 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.h
+1606965105 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\trabajo.h
 
 1603486477 source:c:\users\maximiliano.e.buera\desktop\buera.maximiliano.lab1pp1g\color.c
 	<stdio.h>
@@ -670,7 +670,7 @@
 	"servicio.h"
 	"mascota.h"
 
-1606877209 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\informes.c
+1606965651 source:c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\informes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -682,5 +682,5 @@
 	"mascota.h"
 	"trabajo.h"
 
-1606878332 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\informes.h
+1606965064 c:\users\maxii\desktop\buera.maximiliano.lab1pp1g\informes.h
 
