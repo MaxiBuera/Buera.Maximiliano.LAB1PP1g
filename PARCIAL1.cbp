@@ -35,10 +35,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="color.h" />
-		<Unit filename="fecha.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="fecha.h" />
 		<Unit filename="informes.c">
 			<Option compilerVar="CC" />
 		</Unit>
